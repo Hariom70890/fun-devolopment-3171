@@ -1,15 +1,13 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { MainRoutes } from './Components/MainRoutes';
-// import CartPage from './Components/CartPage';
-
-
+import { Navbar } from './Components/Navbar';
 function App() {
   return (
     <div className="App">
+          <Navbar/>
     <MainRoutes/>
-    {/* <CartPage/> */}
-
+  
     </div>
   );
 }
