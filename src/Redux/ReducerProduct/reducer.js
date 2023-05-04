@@ -1,4 +1,4 @@
-import { PRODUCT_GET_REQUEST_FAILURE, PRODUCT_GET_REQUEST_LOADING, PRODUCT_GET_REQUEST_SUCESSFULL } from "../ActionTypes/actionTypes";
+import { DELETE_PRODUCT_SUCCESS, PATCH_PRODUCT_SUCCESS, PRODUCT_GET_REQUEST_FAILURE, PRODUCT_GET_REQUEST_LOADING, PRODUCT_GET_REQUEST_SUCESSFULL } from "../ActionTypes/actionTypes";
 
 const initialState = {
     isLoading :false,
@@ -17,7 +17,11 @@ export const reducer = (state=initialState,{type,payload})=>{
     case PRODUCT_GET_REQUEST_FAILURE:{
         return {...state,isLoading:false,isError:true}
     }
+    case DELETE_PRODUCT_SUCCESS :
+        return {...state, isLoading:false, products:payload}
         
+     case PATCH_PRODUCT_SUCCESS :
+        return {...state, isLoading:false}
    
     default:
         return state;
