@@ -32,7 +32,7 @@ export const Product = () => {
 /></Text>  ) :(
    <div className='product-card'>
     {product.map((ele)=>{
-    return <ProductCard key={ele.id} {...ele} />
+    return <ProductCard key={ele.id} {...ele} x = "false" />
     })
     }
     </div>
