@@ -21,13 +21,14 @@ export const Navbar = () =>{
 			<h3 className="lodo">SOFA</h3>
 			<div className="secNav">
 			<nav ref={navRef}>
-				<Link to="/about" id="home">ABOUT</Link>
+				<Link to="/about" >ABOUT</Link>
                 <div className="blackDot"></div>
-				<Link  to="/men" id="about" className="about section" >MEN</Link>
+				<Link  to="/men" className="about section" >MEN</Link>
                 <div className="blackDot"></div>
-				<Link to="/women" id="skills">WOMEN</Link>
+				<Link to="/women" >WOMEN</Link>
                 <div className="blackDot"></div>
-				<Link to="/shop" id="projects">SHOP</Link>
+				<Link to="/shop" >SHOP</Link>
+				
                 
 				<button
 					className="nav-btn nav-close-btn"

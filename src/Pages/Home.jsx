@@ -76,20 +76,24 @@ margin: 0 20px;
     font-size: 40px;
     width: 95%;
     /* margin-top: 50px; */
-    word-wrap: inherit;
+    /* word-wrap: inherit; */
     margin: auto;
     margin-top: 30px;
     font-weight: 600;
-    line-height: 60px;
+    /* line-height: 60px; */
     /* float: left; */
-    text-align: center;
-    text-align: justify;
+    /* text-align: center; */
+    /* text-align: justify; */
 }
 .allCollection{
     border: black 1px solid;
     float: left;
+    height: 50px;
+    font-size: 40px;
+    line-height: 30px;
+    margin: 5px;
     padding: 5px 10px;
-    position: relative;
+    /* position: relative; */
     width: fit-content;
     border-radius: 50px;
     align-items: center;
@@ -114,6 +118,9 @@ margin: 0 20px;
     
     /* margin: auto; */
     /* height: 50%; */
+    }
+    .brandDesc{
+    font-size: 20px;
     }
 }
 
