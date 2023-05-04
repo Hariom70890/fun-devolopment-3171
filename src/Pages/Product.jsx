@@ -72,8 +72,10 @@ const handleSortChange = (e)=>{
   size='xl'
 />) :(
    <div className='product-card'>
+
     {product?.map((ele)=>{
     return <ProductCard key={ele.id} {...ele} />
+
     })
     }
     </div>
