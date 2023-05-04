@@ -6,6 +6,7 @@ export const MainRoutes = () => {
   return (
     <Routes>
         <Route path="/"  element={<Product/>} />
+        
     </Routes>
   )
 }
