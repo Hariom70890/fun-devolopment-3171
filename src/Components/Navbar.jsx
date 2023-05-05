@@ -7,7 +7,8 @@ import {BsHandbag} from "react-icons/bs"
 import {IoPersonOutline} from "react-icons/io5"
 import { Icon } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons"
-import styled from "styled-components";
+
+import logo_final from "../images/logo_final.png"
 export const Navbar = () =>{
 	const navRef = useRef();
 
@@ -18,11 +19,14 @@ export const Navbar = () =>{
 	};
 
 	return (
-		<header style={{zIndex:"5"}}>
-			<Link to="/">
+
+	
+
+		<header>
 			
-			<h3 className="lodo">SOFA</h3>
-			</Link>
+			<Link to="/"> <img className="logo" src={logo_final} /> </Link>
+
+
 			<div className="secNav">
 			<nav ref={navRef}>
 				<LINK  to="/about" >ABOUT</LINK>

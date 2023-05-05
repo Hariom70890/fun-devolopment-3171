@@ -20,6 +20,7 @@ header {
 	background-color: #f2f2f2;
 	color: black;
 	position:fixed;
+	z-index: 100;
 	width: 100%;
 }
 
@@ -74,8 +75,17 @@ nav{
     width: fit-content;
     font-size: 20px;
 }
+.logo{
+	height: 50px;
+	border-radius: 10px;
+	/* border: 1px solid blue; */
+	/* padding: -5px; */
+}
 
 @media only screen and (max-width: 1024px) {
+	.logo{
+		height: 30px;
+	}
 	header .nav-btn {
 		visibility: visible;
 		opacity: 1;

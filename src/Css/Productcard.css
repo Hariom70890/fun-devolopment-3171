@@ -1,0 +1,33 @@
+.container {
+    /* border: 2px solid red; */
+    position: relative;
+    display: inline-block;
+  }
+  
+  .container img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease;
+  }
+  
+  .container .buttons {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .container:hover img {
+    filter: blur(3px);
+  }
+  
+  .container:hover .buttons {
+    opacity: 1;
+  }
+  .buttons{
+    display: flex;
+    gap: 10px;
+  }
+
