@@ -1,16 +1,14 @@
-import logo from './logo.svg';
-// import './App.css';
+// import logo from './logo.svg';
+import './App.css';
 import { MainRoutes } from './Components/MainRoutes';
-import Footer from './Components/Footer';
-// import CartPage from './Components/CartPage';
 
+import { Navbar } from './Components/Navbar';
 
 function App() {
   return (
     <div className="App">
-    
+          <Navbar/>
     <MainRoutes/>
-    {/* <Footer/> */}
 
     </div>
   );

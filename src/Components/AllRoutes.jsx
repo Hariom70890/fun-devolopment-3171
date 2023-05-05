@@ -1,11 +1,11 @@
+import {Routes,Route} from "react-router-dom"
+import { Home } from "../Pages/Home"
+import {About} from "../Pages/About"
+import {Contact} from "../Pages/Contact"
+import {Men} from "../Pages/Men"
+import {Women} from "../Pages/Women"
 
-
-
-
-
-export const MainRoutes = () =>{
-
-
+export const AllRoutes = () =>{
 
     return(
         <Routes>
@@ -14,10 +14,8 @@ export const MainRoutes = () =>{
             <Route path="/men" element={<Men/>} />
             <Route path="/women" element={<Women/>} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/shop" element={<Product/>}/>
-            <Route path='admin' element={<Admin/>}/>
-            <Route path='dashboard' element={<AdminDashboard/>}/>
-        </Routes>
 
-  )
+
+        </Routes>
+    )
 }
