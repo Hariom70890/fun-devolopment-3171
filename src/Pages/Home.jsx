@@ -3,7 +3,10 @@ import textBanner from "../images/textBanner.png"
 import Tshirt from "../images/Tshirt.png"
 import styled from 'styled-components'
 import {StarIcon} from "@chakra-ui/icons"
-import {Icon} from "@chakra-ui/react"
+import {HomeProduct} from "../Components/HomeProducts"
+// import {Icon} from "@chakra-ui/react"
+// import buyicon from "../images/buyicon.svg"
+// import "../Styles/home.css"
 export const Home = ( )=>{
     return (
         <DIV >
@@ -20,8 +23,12 @@ export const Home = ( )=>{
                 </div>
                
             </div>
-            <div className="brandDesc">
+            <p className="brandDesc">
                 QUICK BUY makes clothes to elevate everyday life through lighthearted escapism. while styles very by season, <div className="allCollection"> <StarIcon/> all collection</div> are guided by the ineffable sense of freedom that comes with travel.
+            </p>
+            <div className="shopSection">
+                <h1>SHOP BY ESSENTIALS</h1>
+                <HomeProduct/>
             </div>
         </DIV>
     )
@@ -40,7 +47,7 @@ margin: 0 20px;
     /* height: 350px; */
     margin: auto;
     gap: 10px;
-    cursor: url("https://img.icons8.com/?size=512&id=WHW99HGMP4WJ&format=png"), auto;
+    /* cursor: url("https://img.icons8.com/?size=512&id=WHW99HGMP4WJ&format=png"), auto; */
 }
 .topImages > :nth-child(1){
     border-radius: 10px;
@@ -49,7 +56,9 @@ margin: 0 20px;
     height: 600px;
     /* overflow-y: hidden; */
     /* text-align: end; */
-    cursor:  url("https://img.icons8.com/?size=512&id=WHW99HGMP4WJ&format=png") 4 12,auto;
+    /* cursor: url("../images/buyicon.svg"), auto; */
+    cursor: pointer;
+
 }
 
 .nextImages > img{
@@ -80,6 +89,8 @@ margin: 0 20px;
     margin: auto;
     margin-top: 30px;
     font-weight: 600;
+    text-align: justify;
+
     /* line-height: 60px; */
     /* float: left; */
     /* text-align: center; */
@@ -98,6 +109,13 @@ margin: 0 20px;
     border-radius: 50px;
     align-items: center;
 }
+.shopSection{
+    margin: 30px;
+
+}
+.shopSection > h1{
+    font-weight: 800;
+}
 
 
 @media only screen and (max-width: 1024px) {
@@ -114,14 +132,20 @@ margin: 0 20px;
     .capsImage > img{
     /* padding: 5px; */
     border-radius: 10px;
-    width: 48%;
+    width: 49%;
     
     /* margin: auto; */
     /* height: 50%; */
     }
     .brandDesc{
     font-size: 20px;
+    margin-top: 400px;
+    text-align: justify;
     }
+    .allCollection{
+        font-size: large;
+    }
+   
 }
 
 
