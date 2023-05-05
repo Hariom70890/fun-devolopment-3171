@@ -1714,8 +1714,10 @@
   "user": [
     {
       "id": 1,
-      "email": "admin",
-      "password": "admin"
+      "firstName":"",
+      "lastName":"",
+      "email": "",
+      "password": ""
     }
   ],
   "cart": [

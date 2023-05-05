@@ -18,7 +18,10 @@ import { useContext, useReducer, useState } from 'react';
   import {Link, Navigate} from 'react-router-dom'
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { AuthContext } from '../Context/AuthContextProvider';
+import { login, loginAuth } from '../Redux/Login/action';
+import { useDispatch, useSelector } from 'react-redux';
+import { LoginSuccess } from '../Redux/Login/actionType';
+
 
   const reducer=(state,action)=>{
     switch(action.type){
@@ -50,13 +53,15 @@ import { AuthContext } from '../Context/AuthContextProvider';
   }
   
   export default function Login() {
-    const {isAuth,setIsAuth}=useContext(AuthContext)
+    const dispatchh=useDispatch()
     const [state,dispatch]=useReducer(reducer,initialState)
     const [home,setHome]=useState(false)
+    const auth=useSelector((store)=>store)
+    console.log(auth)
 
     const fetchData=async ()=>{
       try {
-       await fetch(`http://localhost:8080/users`,{
+       await fetch(`https://v6dej6.sse.codesandbox.io/user`,{
           method:'GET',
           headers:{
             'Content-Type':'application/json'
@@ -66,13 +71,16 @@ import { AuthContext } from '../Context/AuthContextProvider';
               data.filter((e)=>{
                 if(state.email==""&&state.password==""){
                   toast.error('please enter the right creadiential')
+                 
                 }else if(state.email!=e.email && state.pasword!=e.password){
                   toast.error('plz check your email or password')
+                 
                 }else if(state.email==e.email&&state.password==e.password){
                   setHome(true)
+                  
                   toast.success('✔ successfully login')
-                 setIsAuth(true)
-                
+                  loginAuth(true)
+              
                 }
           })
         })
@@ -85,11 +93,12 @@ import { AuthContext } from '../Context/AuthContextProvider';
     fetchData()
 
     dispatch({type:'reset'})
+   
   }
   
-  if(home){
-    return <Navigate to='/'/>
-  }
+  // if(home){
+  //   return <Navigate to='/'/>
+  // }
 
 
     return (
@@ -102,6 +111,7 @@ import { AuthContext } from '../Context/AuthContextProvider';
           
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
+          <Box height={"5"}></Box>
             <Heading fontSize={'4xl'}>Login into your Account</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
               to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
@@ -117,11 +127,11 @@ import { AuthContext } from '../Context/AuthContextProvider';
               <ToastContainer size='10px'/>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" onChange={(e)=>dispatch({type:"Email",payload:e.target.value})} />
+                <Input type="email" value={state.email} onChange={(e)=>dispatch({type:"Email",payload:e.target.value})} />
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password"  onChange={(e)=>dispatch({type:"Password",payload:e.target.value})} />
+                <Input type="password" value={state.password} onChange={(e)=>dispatch({type:"Password",payload:e.target.value})} />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
