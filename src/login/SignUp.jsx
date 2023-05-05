@@ -65,18 +65,21 @@ export default function SignupCard() {
   const [state,dispatch]=useReducer(reducer,initialState)
 
   const handleSubmit=()=>{
-   axios.post(`http://localhost:8080/users`,state)
-    dispatch({type:'reset'})
+    console.log(state)
+   axios.post(`https://v6dej6.sse.codesandbox.io/user`,state)
+   
   }
 
   return (
     <Flex
+   
       minH={'100vh'}
       align={'center'}
       justify={'center'}
       bg={useColorModeValue('gray.50', 'gray.800')}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
+          <Box height={"5"}></Box>
           <Heading fontSize={'4xl'} textAlign={'center'}>
             Sign up
           </Heading>

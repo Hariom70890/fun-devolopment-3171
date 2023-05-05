@@ -4,6 +4,7 @@ import {About} from "../Pages/About"
 import {Contact} from "../Pages/Contact"
 import {Men} from "../Pages/Men"
 import {Women} from "../Pages/Women"
+import Login from "../login/Login"
 
 export const AllRoutes = () =>{
 
@@ -14,6 +15,7 @@ export const AllRoutes = () =>{
             <Route path="/men" element={<Men/>} />
             <Route path="/women" element={<Women/>} />
             <Route path="/contact" element={<Contact/>} />
+            <Route path="/login" element={<Login/>} />
 
 
         </Routes>

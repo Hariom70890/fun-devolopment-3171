@@ -8,6 +8,8 @@ import {Women} from "../Pages/Women"
 import { Product } from '../Pages/Product'
 import Admin from '../Pages/Admin'
 import AdminDashboard from '../Pages/AdminDashboard'
+import Login from "../login/Login"
+import SignupCard from "../login/SignUp"
 
 
 
@@ -21,6 +23,8 @@ export const MainRoutes = () =>{
             <Route path="/about" element={<About/>} />
             <Route path="/men" element={<Men/>} />
             <Route path="/women" element={<Women/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/signup" element={<SignupCard/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/shop" element={<Product/>}/>
             <Route path='admin' element={<Admin/>}/>

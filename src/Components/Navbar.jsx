@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import {Link} from "react-router-dom"
+import {NavLink,Link} from "react-router-dom"
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/navbar.css"
 import {BsHandbag} from "react-icons/bs"
@@ -7,6 +7,7 @@ import {BsHandbag} from "react-icons/bs"
 import {IoPersonOutline} from "react-icons/io5"
 import { Icon } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons"
+
 import logo_final from "../images/logo_final.png"
 export const Navbar = () =>{
 	const navRef = useRef();
@@ -18,19 +19,23 @@ export const Navbar = () =>{
 	};
 
 	return (
+
+	
+
 		<header>
 			
 			<Link to="/"> <img className="logo" src={logo_final} /> </Link>
 
+
 			<div className="secNav">
 			<nav ref={navRef}>
-				<Link to="/about" >ABOUT</Link>
+				<LINK  to="/about" >ABOUT</LINK>
                 <div className="blackDot"></div>
-				<Link  to="/men" className="about section" >MEN</Link>
+				<LINK  to="/men" className="about section" >MEN</LINK>
                 <div className="blackDot"></div>
-				<Link to="/women" >WOMEN</Link>
+				<LINK to="/women" >WOMEN</LINK>
                 <div className="blackDot"></div>
-				<Link to="/shop" >SHOP</Link>
+				<LINK to="/shop" >SHOP</LINK>
 				
                 
 				<button
@@ -43,7 +48,9 @@ export const Navbar = () =>{
             <div className="navIcons">
                     <SearchIcon/>
                     <Icon as={BsHandbag}/>
+					<Link to="/login">
                     <Icon as={IoPersonOutline}/>
+					</Link>
                 </div>
 			<button
 				className="nav-btn"
@@ -54,4 +61,15 @@ export const Navbar = () =>{
 		</header>
 	);
 }
+
+const LINK =styled(NavLink)`
+
+&.active{
+	padding:5px;
+	border-radius:5px;
+background-color:black;
+color:white;
+}
+
+`
 
