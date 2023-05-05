@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import {
    DELETE_PRODUCT_SUCCESS,
@@ -20,6 +21,7 @@ export const getProduct = (paramObj) => (dispatch) => {
          dispatch({ type: PRODUCT_GET_REQUEST_FAILURE });
       });
 };
+
 
 //  .......... deleting the product ...........
 export const deleteProduct = (id) => (dispatch) => {
