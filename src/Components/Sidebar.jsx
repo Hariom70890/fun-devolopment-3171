@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react'
 import React, { useContext, useEffect, useState } from 'react'
-import { FcFilledFilter } from 'react-icons/fc';
+// import { FcFilledFilter } from 'react-icons/fc';
 import { useSearchParams } from 'react-router-dom';
 import { ContextProvider } from '../context/ContextProvider';
 
