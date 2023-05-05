@@ -1,6 +1,7 @@
 // import "../Styles/home.css"
-// import textBanner from "../images/textBanner.png"
+import textBanner from "../Images/textBanner.png"
 // import Tshirt from "../images/Tshirt.png"
+import Tshirt from '../Images/Tshirt.png'
 
 import styled from 'styled-components'
 import {StarIcon} from "@chakra-ui/icons"
@@ -10,9 +11,9 @@ export const Home = ( )=>{
         <DIV >
             
             <div className="topImages">
-                {/* <img src={Tshirt} alt="" /> */}
+                <img src={Tshirt} alt="" />
                 <div className="nextImages">
-                    {/* <img src={textBanner} alt="" /> */}
+                    <img src={textBanner} alt="" />
                 <div className="capsImage">
                     <img src="https://cdn.pixabay.com/photo/2022/06/22/16/00/cap-7278216_960_720.jpg" alt="" />
                     <img src="https://cdn.pixabay.com/photo/2015/07/02/20/13/hats-829509_960_720.jpg" alt="" />
