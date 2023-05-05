@@ -1,6 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const CartPage = () => {
+
+//  const getcartdata=useSelector((state)=>state.cartreducer)
+// console.log(getcartdata)
+
+
+
+
   return (
     <div>
         
