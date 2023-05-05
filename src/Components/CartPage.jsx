@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux'
 
 const CartPage = () => {
 
-//  const getcartdata=useSelector((state)=>state.cartreducer)
-// console.log(getcartdata)
+ const getcartdata=useSelector((state)=>state.cartreducer)
+console.log(getcartdata)
+console.log("abc")
+console.log("op")
 
 
 

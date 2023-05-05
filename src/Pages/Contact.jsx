@@ -1,5 +1,5 @@
 
-export const Contact = ( ) =>{
+export const Contact = () =>{
     return(
         <div>
             Contact

@@ -15,6 +15,7 @@
     "chroma-js": "^2.4.2",
     "framer-motion": "^10.12.7",
     "google-fonts-loader": "^1.0.2",
+    "icons": "^1.0.0",
     "json-server": "^0.17.3",
     "mdb-react-ui-kit": "^6.0.0",
     "react": "^18.2.0",

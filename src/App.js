@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import CartPage from './Components/CartPage';
 import Footer from './Components/Footer';
 import { MainRoutes } from './Components/MainRoutes';
 
@@ -11,6 +12,7 @@ function App() {
           <Navbar/>
     <MainRoutes/>
 <Footer/>
+
     </div>
   );
 }
