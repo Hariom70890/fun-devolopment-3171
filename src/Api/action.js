@@ -40,4 +40,6 @@ export const deleteProduct = (id) => (dispatch) => {
          dispatch({ type: DELETE_PRODUCT_SUCCESS, payload: payload });
       })
       .catch((err) => dispatch({ type: PRODUCT_GET_REQUEST_SUCESSFULL }));
+
 };
+
