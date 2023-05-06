@@ -1,4 +1,4 @@
-import { Text } from '@chakra-ui/react'
+import { Checkbox, Text } from '@chakra-ui/react'
 import React, { useContext, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import { ContextProvider } from '../context/ContextProvider';
@@ -86,65 +86,48 @@ setLocalstorageData("headingGen",headingGen)
       <Text fontSize='25px' color='black'> Gender</Text>
 
       <div className='checkbox'>
-      <input type='checkbox' value={"male"} onChange={handleGenderChange} checked={gender.includes("male")} />  
-      <label> Male</label>
+      <Checkbox  value={"male"} onChange={handleGenderChange} checked={gender.includes("male")} >Male</Checkbox>
       <br/>
-      <input type='checkbox' value={"female"} onChange={handleGenderChange} checked={gender.includes("female")}/>  
-      <label> Female</label>
+      <Checkbox  value={"female"} onChange={handleGenderChange} checked={gender.includes("female")} >Female</Checkbox>
       <br/>
       <br/>
        </div>
       <Text fontSize='25px' color='black'>Category</Text>
 
       <div className='checkbox'>
-      <input type='checkbox' value={"shirt"} onChange={handleCategoryChange} checked={category.includes("shirt")}/>  
-      <label> Shirt</label>
+      <Checkbox  value={"shirt"} onChange={handleCategoryChange} checked={category.includes("shirt")} >Shirt</Checkbox>
       <br/>
-      <input type='checkbox' value={"jeans"} onChange={handleCategoryChange} checked={category.includes("jeans")}/>  
-      <label> Jeans</label>
+      <Checkbox  value={"jeans"} onChange={handleCategoryChange} checked={category.includes("jeans")} >Jeans</Checkbox>
       <br/>
-      <input type='checkbox' value={"sarees"} onChange={handleCategoryChange} checked={category.includes("sarees")}/>  
-      <label> Sarees</label>
+      <Checkbox  value={"sarees"} onChange={handleCategoryChange} checked={category.includes("sarees")} >Sarees</Checkbox>
       <br/>
-      <input type='checkbox' value={"kurtas"} onChange={handleCategoryChange} checked={category.includes("kurtas")}/>  
-      <label> Kurtas</label>
+      <Checkbox  value={"kurtas"} onChange={handleCategoryChange} checked={category.includes("kurtas")} >Kurtas</Checkbox>
       <br/>
-      <input type='checkbox' value={"shoes"} onChange={handleCategoryChange} checked={category.includes("shoes")}/>  
-      <label> Shoes</label>
+      <Checkbox  value={"shoes"} onChange={handleCategoryChange} checked={category.includes("shoes")} >Shoes</Checkbox>
       <br/>
-      <input type='checkbox' value={"sandals"} onChange={handleCategoryChange} checked={category.includes("sandals")}/>  
-      <label> Sandals</label>
+      <Checkbox  value={"sandals"} onChange={handleCategoryChange} checked={category.includes("sandals")} >Sandals</Checkbox>
       </div>
       <br/>
       
       <Text fontSize='25px' color='black'>Color</Text>
       <div className='checkbox'>
-      <input type='checkbox' value={"Blue"} onChange={handleColorChange} checked={category.includes("Blue")}/>  
-      <label> Blue</label>
+      <Checkbox  value={"Blue"} onChange={handleColorChange} checked={category.includes("Blue")} >Blue</Checkbox>
       <br/>
-      <input type='checkbox' value={"White"} onChange={handleColorChange} checked={category.includes("White")}/>  
-      <label> White</label>
+      <Checkbox  value={"White"} onChange={handleColorChange} checked={category.includes("White")} >White</Checkbox>
       <br/>
-      <input type='checkbox' value={"Black"} onChange={handleColorChange} checked={category.includes("Black")}/>  
-      <label> Black</label>
+      <Checkbox  value={"Black"} onChange={handleColorChange} checked={category.includes("Black")} >Black</Checkbox>
       <br/>
-      <input type='checkbox' value={"Gray"} onChange={handleColorChange} checked={category.includes("Gray")}/>  
-      <label> Gray</label>
+      <Checkbox  value={"Gray"} onChange={handleColorChange} checked={category.includes("Gray")} >Gray</Checkbox>
       <br/>
-      <input type='checkbox' value={"Maroon"} onChange={handleColorChange} checked={category.includes("Maroon")}/>  
-      <label> Maroon</label>
+      <Checkbox  value={"Maroon"} onChange={handleColorChange} checked={category.includes("Maroon")} >Maroon</Checkbox>
       <br/>
-      <input type='checkbox' value={"Pink"} onChange={handleColorChange} checked={category.includes("Pink")}/>  
-      <label> Pink</label>
+      <Checkbox  value={"Pink"} onChange={handleColorChange} checked={category.includes("Pink")} >Pink</Checkbox>
       <br/>
-      <input type='checkbox' value={"Olive"} onChange={handleColorChange} checked={category.includes("Olive")}/>  
-      <label> Olive</label>
+      <Checkbox  value={"Olive"} onChange={handleColorChange} checked={category.includes("Olive")} >Olive</Checkbox>
       <br/>
-      <input type='checkbox' value={"Multi"} onChange={handleColorChange} checked={category.includes("Multi")}/>  
-      <label> Multi</label>
+      <Checkbox  value={"Multi"} onChange={handleColorChange} checked={category.includes("Multi")} >Multi</Checkbox>
       <br/>
        </div>
-
       </div>
     </div>
   )
