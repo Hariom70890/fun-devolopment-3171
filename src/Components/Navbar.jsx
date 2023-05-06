@@ -8,7 +8,7 @@ import {BsHandbag} from "react-icons/bs"
 import {IoPersonOutline} from "react-icons/io5"
 import { Icon } from "@chakra-ui/react";
 import {SearchIcon} from "@chakra-ui/icons"
-
+import styled from "styled-components";
 import logo_final from "../images/logo_final.png"
 import styled from "styled-components";
 export const Navbar = () =>{

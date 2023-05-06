@@ -10,6 +10,7 @@ import Admin from '../Pages/Admin'
 import AdminDashboard from '../Pages/AdminDashboard'
 import Login from "../login/Login"
 import SignupCard from "../login/SignUp"
+import CartPage from "./CartPage"
 
 import CartPage from "./CartPage"
 
@@ -44,6 +45,8 @@ export const MainRoutes = () =>{
 
             <Route path='admin' element={<Admin/>}/>
             <Route path='dashboard' element={<AdminDashboard/>}/>
+
+            <Route path='/cart' element={<CartPage/>}/>
         </Routes>
 
   )

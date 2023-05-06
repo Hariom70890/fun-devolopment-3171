@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "chroma-js": "^2.4.2",
+    "components": "^0.1.0",
     "framer-motion": "^10.12.7",
     "google-fonts-loader": "^1.0.2",
     "json-server": "^0.17.3",
@@ -26,6 +27,7 @@
     "react-toastify": "^9.1.2",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "styled": "^1.0.0",
     "styled-component": "^2.8.0",
     "styled-components": "^5.3.10",
     "web-vitals": "^2.1.4"

@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import CartPage from './Components/CartPage';
 import Footer from './Components/Footer';
 import { MainRoutes } from './Components/MainRoutes';
 
@@ -9,10 +10,10 @@ import Login from './login/Login';
 function App() {
   return (
     <div className="App">
-          <Navbar/>
-    <MainRoutes/>
-    
-<Footer/>
+        <Navbar/>
+        <MainRoutes/>
+        <Footer/>
+       
     </div>
   );
 }

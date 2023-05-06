@@ -1,8 +1,12 @@
 
+
+import textBanner from "../images/textBanner.png"
+import Tshirt from "../images/Tshirt.png"
+
+
+
 import textBanner from "../images/textBanner.png"
 
-
-import Tshirt from '../images/Tshirt.png'
 
 
 import styled from 'styled-components'
