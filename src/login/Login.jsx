@@ -15,12 +15,12 @@ import {
 import axios from 'axios';
 import { useContext, useReducer, useState } from 'react';
 
-  import {Link, Navigate} from 'react-router-dom'
+  import {Link, Navigate, json} from 'react-router-dom'
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { login, loginAuth } from '../Redux/Login/action';
+import { LoginFailure, LoginSuccess } from '../Redux/Login/action';
 import { useDispatch, useSelector } from 'react-redux';
-import { LoginSuccess } from '../Redux/Login/actionType';
+import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
 
 
   const reducer=(state,action)=>{
@@ -55,52 +55,39 @@ import { LoginSuccess } from '../Redux/Login/actionType';
   export default function Login() {
     const dispatchh=useDispatch()
     const [state,dispatch]=useReducer(reducer,initialState)
-    const [home,setHome]=useState(false)
-    const auth=useSelector((store)=>store)
-    console.log(auth)
+    const auth=useSelector((store)=>store.AuthReducer.isAuth)
+    const Auth=localStorage.getItem("isAuth")
 
-    const fetchData=async ()=>{
-      try {
-       await fetch(`https://v6dej6.sse.codesandbox.io/user`,{
-          method:'GET',
-          headers:{
-            'Content-Type':'application/json'
-          }
-            }).then((res)=>res.json())
-            .then((data)=>{
-              data.filter((e)=>{
-                if(state.email==""&&state.password==""){
-                  toast.error('please enter the right creadiential')
-                 
-                }else if(state.email!=e.email && state.pasword!=e.password){
-                  toast.error('plz check your email or password')
-                 
-                }else if(state.email==e.email&&state.password==e.password){
-                  setHome(true)
-                  
-                  toast.success('✔ successfully login')
-                  loginAuth(true)
-              
-                }
-          })
-        })
-      } catch (error) {
-        
-      }
-    }
-
-   const handleLogin=()=>{
-    fetchData()
-
-    dispatch({type:'reset'})
    
+   
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`https://v6dej6.sse.codesandbox.io/user`);
+      const users = response.data;
+      
+      const user = users.find((u) => u.email === state.email && u.password === state.password);
+  
+      if (user) {
+        toast.success('✔ successfully login');
+        dispatchh(LoginSuccess(true))
+        console.log('true',auth)
+      } else {
+        toast.error('plz check your email or password');
+        dispatch(LoginFailure(false))
+        console.log('false',auth)
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
   
-  // if(home){
-  //   return <Navigate to='/'/>
-  // }
-
-
+  const handleLogin = () => {
+    fetchData();
+  }
+if(auth){
+  return <Navigate to="/" />
+}
     return (
       <Flex
         minH={'100vh'}
