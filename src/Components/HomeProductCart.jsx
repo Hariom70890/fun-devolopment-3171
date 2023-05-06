@@ -77,29 +77,35 @@ const DIV = styled.div`
     background-color: #950000 ;
 }
 .imgContainer{
-    background-color: #000000;
+    background-color: #ffffff;
     border-radius: 20px;
+    align-items: center;
 }
 .imgContainer > h2{
     padding: 10px;
-    border: 1px solid white;
+    border: 2px solid black;
     font-weight: 600;
     width: fit-content;
     margin: auto;
-    color: white;
+    align-content: center;
+    color: #000000;
     background-color: transparent;
-    margin-top: -110px;
+    margin-top: -90px;
     margin-bottom: 50px;
     border-radius: 30px;
-    height: 60px;
+    /* height: 60px; */
 }
 .active{
     /* visibility: hidden; */
     opacity:0.5;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 } 
 @media only screen and (max-width: 1024px) {
 grid-template-columns: repeat(2,45%);
+}
+.imgContainer > h2{
+    font-size: smaller;
+    padding: 10px;
 }
 .proName, .orangePrice{
     font-size: small;

@@ -1,4 +1,5 @@
-import { LoginFailure, LoginSuccess } from "./actionType";
+import { LOGIN_FAILURE, LOGIN_SUCCESS } from "./actionType";
+
 
 const intitalState={
     isAuth:false,
@@ -7,13 +8,13 @@ const intitalState={
 export const AuthReducer=(state=intitalState,{type,payload})=>{
     
     switch(type){
-        case LoginSuccess:{
+        case LOGIN_SUCCESS:{
             return {
                
                 isAuth:payload,
             }
         }
-        case LoginFailure:{
+        case LOGIN_FAILURE:{
             return {
                 
                 isAuth:payload,
