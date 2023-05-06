@@ -1,12 +1,14 @@
 // import "../Styles/home.css"
-import textBanner from "../Images/textBanner.png"
-// import Tshirt from "../images/Tshirt.png"
-import Tshirt from '../Images/Tshirt.png'
-
+import textBanner from "../images/textBanner.png"
+import Tshirt from "../images/Tshirt.png"
+// import Tshirt from '../Images/Tshirt.png'
+import jacket from "../images/jacket.jpg"
 import styled from 'styled-components'
 import {StarIcon} from "@chakra-ui/icons"
 import {HomeProduct} from "../Components/HomeProducts"
-// import {Icon} from "@chakra-ui/react"
+import {BsGlobe} from "react-icons/bs"
+import {BiPlanet} from "react-icons/bi"
+import {Icon} from "@chakra-ui/react"
 // import buyicon from "../images/buyicon.svg"
 // import "../Styles/home.css"
 export const Home = ( )=>{
@@ -32,6 +34,42 @@ export const Home = ( )=>{
                 <h1>SHOP BY ESSENTIALS</h1>
                 <HomeProduct/>
             </div>
+            <div className="lastDiv">
+                <div className="orangeDiv">
+                    <h1>WE'RE CHANGING</h1>
+                    <h1>THE WAY THINGS</h1>
+                    <h1>GET MADE.</h1>
+
+                    <hr className="hrline" />
+                    <div className="VisionDiv">
+                        <div className="missionDiv">
+                            <div className="flexIcon">
+                                <div className="lastIcons">
+                                    <Icon color="white" as={BsGlobe}/>
+                                </div>
+                                <h3>MISSION</h3>
+                            </div>
+                            <p>We're on a mission to empower creative independence in a commercial world and incredible</p>
+                        </div>
+                        <div className="missionDiv">
+                        <div className="flexIcon">
+                                <div className="lastIcons">
+                                    <Icon color="white" as={BiPlanet}/>
+                                </div>
+                                <h3>SUSTAINBILITY</h3>
+                            </div>
+                            <p>We're challenging contional retail, putting an end to dead stock, unconventional waste and more funtastic.</p>
+                        </div>
+                    </div>
+                </div>
+              
+                <img src={jacket} alt="" />
+
+            </div>
+            <h1 className="yourDesign">WANT TO DESIGN YOUR OWN? CALM, WE CAN DO IT!</h1>
+            <video autoPlay={true} muted  loop  className="Mvedio"  width="95%" height="200"  controls={false} >
+                <source  src={require("../images/measurmen.mp4")} type="video/mp4" />
+            </video> 
         </DIV>
     )
 }
@@ -39,12 +77,15 @@ export const Home = ( )=>{
 
 const DIV = styled.div`
 /* margin-top: 60px; */
+ background-color: #f2f2f2;
+padding: 20px;
 padding-top: 80px;
-margin: 0 20px;
+margin: 0;
 
 
 .topImages{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     width: 95%;
     /* height: 350px; */
     margin: auto;
@@ -53,9 +94,10 @@ margin: 0 20px;
 }
 .topImages > :nth-child(1){
     border-radius: 10px;
-    /* width: 40%; */
+    width: 100%;
+    height: 100%;
     /* overflow-x: hidden; */
-    height: 600px;
+    /* height: 600px; */
     /* overflow-y: hidden; */
     /* text-align: end; */
     /* cursor: url("../images/buyicon.svg"), auto; */
@@ -65,21 +107,22 @@ margin: 0 20px;
 
 .nextImages > img{
     width: 100%;
-    height: 400px;
+    /* height: 400px; */
     border-radius: 10px;
 }
 .capsImage{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     /* width: 100%; */
     gap: 10px;
     margin: 10px 0 0 0;
-    height: 190px;
+    /* height: 190px; */
     /* gap: 20px; */
 }
 .capsImage > img{
     /* padding: 5px; */
     border-radius: 10px;
-    width: 50%;
+    /* width: 50%; */
     /* margin: auto; */
     /* height: 50%; */
 }
@@ -112,42 +155,138 @@ margin: 0 20px;
     align-items: center;
 }
 .shopSection{
-    margin: 30px;
+    margin: 20px;
 
 }
 .shopSection > h1{
     font-weight: 800;
+    margin: 20px 0;
+}
+.lastDiv{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.lastDiv > img{
+    filter: grayscale(100%);
+    width: 30%;
+    border-radius: 20px;
+}
+.orangeDiv{
+    width: 70%;
+    /* display: ; */
+    border-radius: 30px;
+    padding: 30px;
+    font-weight: 600;
+    background-color: #de6636;
+}
+.orangeDiv > h1{
+    font-weight: 900;
+    font-size: 50px;
 }
 
+.lastIcons{
+    background-color: black;
+    width: fit-content;
+    border-radius: 50%;
+    padding: 8px;
+    
+}
+.flexIcon{
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+.flexIcon > h3{
+    margin-top: 2px;
+    font-weight: 600;
+}
+.missionDiv{
+    padding: 20px;
+    /* width: 40% */
+}
+.VisionDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.yourDesign{
+    margin: 30px auto;
+    font-weight: 900;
+    text-align: justify;
+    width: 90%;
+}
+.Mvedio{
+    border-radius: 20px;
+    /* height: fit-content; */
+    margin: 20px auto ;
+    
+    /* background-color: white; */
+}
+.hrline{
+    color: black;
 
+}
 @media only screen and (max-width: 1024px) {
     .topImages{
-        flex-direction: column;
+        grid-template-columns: repeat(1,1fr);
     }
     .nextImages > img{
-    height: 200px;
+    /* height: 200px; */
 
     }
     .topImages{
-        height: 300px;
+        /* height: 300px; */
     }
     .capsImage > img{
     /* padding: 5px; */
     border-radius: 10px;
-    width: 49%;
+    /* width: 49%; */
     
     /* margin: auto; */
     /* height: 50%; */
     }
     .brandDesc{
     font-size: 20px;
-    margin-top: 400px;
+    /* margin-top: 400px; */
     text-align: justify;
     }
     .allCollection{
         font-size: large;
     }
-   
+    .VisionDiv{
+        flex-direction: column;
+    }
+    .lastDiv{
+        flex-direction: column;
+    }
+    .orangeDiv{
+        width: 100%;
+        padding: 15px 10px;
+    }
+    .orangeDiv > h1{
+        /* font-weight: 900; */
+        font-size: 20px;
+        margin: 10px;
+    }
+    .flexIcon {
+        gap: 5px;
+        /* font-weight: 400; */
+        /* font-size: larger; */
+    }
+    .flexIcon > h3{
+        font-size:larger;
+    }
+    .lastDiv > img{
+        width: 100%;
+    }
+    .missionDiv{
+        padding: 10px;
+    }
+    .yourDesign{
+        /* font-weight: 600; */
+        font-size: x-large;
+    }
+ 
 }
 
 

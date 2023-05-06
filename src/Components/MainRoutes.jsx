@@ -10,7 +10,7 @@ import Admin from '../Pages/Admin'
 import AdminDashboard from '../Pages/AdminDashboard'
 import Login from "../login/Login"
 import SignupCard from "../login/SignUp"
-
+import CartPage from "./CartPage"
 
 
 export const MainRoutes = () =>{
@@ -27,6 +27,7 @@ export const MainRoutes = () =>{
             <Route path="/signup" element={<SignupCard/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/shop" element={<Product/>}/>
+            <Route path="/cart" element={<CartPage/>}/>
             <Route path='admin' element={<Admin/>}/>
             <Route path='dashboard' element={<AdminDashboard/>}/>
         </Routes>
