@@ -22,7 +22,7 @@ export const HomeProductCart = ({image,title,price})=>{
         </div>
 
         </div>
-        <h3 className="orangePrice">${price}</h3>
+        <h3 className="orangePrice">₹{price}</h3>
     </div>
 
         </DIV>
@@ -96,7 +96,7 @@ const DIV = styled.div`
 .active{
     /* visibility: hidden; */
     opacity:0.5;
-    border: 1px solid black;
+    border: 1px solid wheat;
 } 
 @media only screen and (max-width: 1024px) {
 grid-template-columns: repeat(2,45%);
