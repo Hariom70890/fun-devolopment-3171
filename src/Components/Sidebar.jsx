@@ -5,8 +5,8 @@ import { ContextProvider } from '../context/ContextProvider';
 import { setLocalstorageData, setLocalstorageDataCategory, setLocalstorageDataGender } from '../Api/LocalStorage';
 import "../Css/sidebar.css"
 // import { BsPlusLg } from 'react-icons/bs';
-import filterIcon from "../Images/filter-icon.png"
-import tasklist from "../Images/task-list.png"
+import filterIcon from "../images/filter-icon.png"
+import tasklist from "../images/task-list.png"
 
 
 export const Sidebar = () => {
