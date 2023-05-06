@@ -1,7 +1,7 @@
 // import "../Styles/home.css"
-import textBanner from "../Images/textBanner.png"
-// import Tshirt from "../images/Tshirt.png"
-import Tshirt from '../Images/Tshirt.png'
+import textBanner from "../images/textBanner.png"
+import Tshirt from "../images/Tshirt.png"
+// import Tshirt from '../Images/Tshirt.png'
 
 import styled from 'styled-components'
 import {StarIcon} from "@chakra-ui/icons"

@@ -12,8 +12,8 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage'
 import { auto } from '@popperjs/core'
 
 export const Product = () => {
-  let getDataCategoryLS = getLocalstorageData("headingCat")
-  let getDataGenderLS = getLocalstorageData("headingGen")
+  // let getDataCategoryLS = getLocalstorageData("headingCat")
+  // let getDataGenderLS = getLocalstorageData("headingGen")
   const dispatch = useDispatch();
   const [searchParams,setSearchParams] =  useSearchParams();
   const location = useLocation()
@@ -52,18 +52,18 @@ const handleSortChange = (e)=>{
 // console.log(sortdata)
 // console.log(product.length)
 // setLocalstorageData("total",product.length)
- const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
+//  const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
 //  getDataCategoryLS = getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1);
 
   return (
     <div className='side-bar'><Sidebar/>
     <DIV className='product-container'>
-    <Text className='text-male' fontSize='40px' color='black'>{GenderforDisplay}</Text>
+    {/* <Text className='text-male' fontSize='40px' color='black'>{GenderforDisplay}</Text> */}
     <div className='total-sort-conatiner'>
     <Text fontSize='30px' color='black'>
   Total Product :{product.length}
 </Text>
-    <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text>
+    {/* <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text> */}
 <select id="sort" onChange={handleSortChange}>
     <option value="">--Sort by Price--</option>
     <option value="asc">Low to High</option>
