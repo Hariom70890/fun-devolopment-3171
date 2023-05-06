@@ -2,6 +2,7 @@ import { useRef } from "react";
 import {NavLink,Link} from "react-router-dom"
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/navbar.css"
+import styled from "styled-components";
 import {BsHandbag} from "react-icons/bs"
 // import {BiSearch} from "react-icons/bi"
 import {IoPersonOutline} from "react-icons/io5"
@@ -47,7 +48,10 @@ export const Navbar = () =>{
 			</nav>
             <div className="navIcons">
                     <SearchIcon/>
-                    <Icon as={BsHandbag}/>
+					<Link to="/cart">
+					<Icon as={BsHandbag}/>
+					</Link>
+                    
 					<Link to="/login">
                     <Icon as={IoPersonOutline}/>
 					</Link>
