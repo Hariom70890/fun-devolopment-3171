@@ -30,13 +30,13 @@ export const Navbar = () =>{
 
 			<div className="secNav">
 			<nav ref={navRef}>
-				<LINK  to="/about" >ABOUT</LINK>
+				<Link  to="/about" >ABOUT</Link>
                 <div className="blackDot"></div>
-				<LINK  to="/men" className="about section" >MEN</LINK>
+				<Link  to="/men" className="about section" >MEN</Link>
                 <div className="blackDot"></div>
-				<LINK to="/women" >WOMEN</LINK>
+				<Link to="/women" >WOMEN</Link>
                 <div className="blackDot"></div>
-				<LINK to="/shop" >SHOP</LINK>
+				<Link to="/shop" >SHOP</Link>
 				
                 
 				<button
@@ -66,14 +66,5 @@ export const Navbar = () =>{
 	);
 }
 
-const LINK =styled(NavLink)`
 
-/* &.active{
-	padding:5px;
-	border-radius:5px;
-background-color:black;
-color:white;
-} */
-
-`
 
