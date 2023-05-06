@@ -1,15 +1,14 @@
 import React from 'react';
-import { Box, VStack, HStack, UnorderedList, ListItem, List, Input, Button } from '@chakra-ui/react'
+import { Box, VStack, HStack, UnorderedList, ListItem, List, Input, Button, SimpleGrid } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
     <Box
-      bg="#333333"
-      color="#FFFFFF"
-      px={{ base: 4, sm: 6, md: 8 }}
-      py={{ base: 4, sm: 6, md: 8 }}
-    >
-      <VStack
+    bg="#333333"
+    color="#FFFFFF"
+    px={{ base: 4, sm: 6, md: 8 }}
+    py={{ base: 4, sm: 6, md: 8 }} >
+       <VStack
         spacing={4}
         align='start'
         maxW={{ base: 'full', sm: '2xl', md: '6xl' }}
@@ -28,7 +27,8 @@ const Footer = () => {
           <h6>FOR REAL PEOPLE</h6>
         </Box>
         </VStack>
-          <List>
+        
+        <List>
             <h5>PRODUCT</h5>
             <ListItem>Jacket</ListItem>
             <ListItem>Shirt</ListItem>
@@ -38,23 +38,22 @@ const Footer = () => {
             <ListItem>Bottoms</ListItem>
           </List>
           <List>
-            <h5>PRODUCT</h5>
-            <ListItem>Jacket</ListItem>
-            <ListItem>Shirt</ListItem>
-            <ListItem>T-shirt</ListItem>
-            <ListItem>Dresses</ListItem>
-            <ListItem>Outwear</ListItem>
-            <ListItem>Bottoms</ListItem>
+            <h5>BUYING</h5>
+            <ListItem>Shop</ListItem>
+            <ListItem>Term of Use</ListItem>
+            <ListItem>Privacy</ListItem>
+            <ListItem>How & works</ListItem>
+            <ListItem>Customer Services</ListItem>
           </List>
           <List>
-            <h5>PRODUCT</h5>
-            <ListItem>Jacket</ListItem>
-            <ListItem>Shirt</ListItem>
-            <ListItem>T-shirt</ListItem>
-            <ListItem>Dresses</ListItem>
-            <ListItem>Outwear</ListItem>
-            <ListItem>Bottoms</ListItem>
+            <h5>SOCIEL</h5>
+            <ListItem>Instagram</ListItem>
+            <ListItem>Facebook</ListItem>
+            <ListItem>Twetter</ListItem>
+            
           </List>
+        
+          
         <VStack align='start'>
           <Input width={{ base: 'full', md: '250px' }} placeholder="EMAIL ADDRESS" />
           <Button colorScheme="blue" >Send</Button>
@@ -62,7 +61,11 @@ const Footer = () => {
         </HStack>
       </VStack>
     </Box>
+    
+     
+
   )
 }
 
 export default Footer;
+

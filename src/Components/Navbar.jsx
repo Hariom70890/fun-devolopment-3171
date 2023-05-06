@@ -2,6 +2,7 @@ import { useRef } from "react";
 import {NavLink,Link} from "react-router-dom"
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/navbar.css"
+import styled from "styled-components";
 import {BsHandbag} from "react-icons/bs"
 // import {BiSearch} from "react-icons/bi"
 import {IoPersonOutline} from "react-icons/io5"
@@ -30,13 +31,13 @@ export const Navbar = () =>{
 
 			<div className="secNav">
 			<nav ref={navRef}>
-				<LINK  to="/about" >ABOUT</LINK>
+				<Link  to="/about" >ABOUT</Link>
                 <div className="blackDot"></div>
-				<LINK  to="/men" className="about section" >MEN</LINK>
+				<Link  to="/men" className="about section" >MEN</Link>
                 <div className="blackDot"></div>
-				<LINK to="/women" >WOMEN</LINK>
+				<Link to="/women" >WOMEN</Link>
                 <div className="blackDot"></div>
-				<LINK to="/shop" >SHOP</LINK>
+				<Link to="/shop" >SHOP</Link>
 				
                 
 				<button
@@ -48,7 +49,10 @@ export const Navbar = () =>{
 			</nav>
             <div className="navIcons">
                     <SearchIcon/>
-                    <Icon as={BsHandbag}/>
+					<Link to="/cart">
+					<Icon as={BsHandbag}/>
+					</Link>
+                    
 					<Link to="/login">
                     <Icon as={IoPersonOutline}/>
 					</Link>
@@ -63,14 +67,5 @@ export const Navbar = () =>{
 	);
 }
 
-const LINK =styled(NavLink)`
 
-&.active{
-	padding:5px;
-	border-radius:5px;
-background-color:black;
-color:white;
-}
-
-`
 
