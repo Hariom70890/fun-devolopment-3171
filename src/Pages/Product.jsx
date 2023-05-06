@@ -114,7 +114,7 @@ export const Product = () => {
   return (
     <div className='side-bar'><Sidebar/>
     <DIV className='product-container'>
-    {/* <Text className='text-male' fontSize='40px' color='black'>{GenderforDisplay}</Text> */}
+
     <div className='total-sort-conatiner'>
     <Text fontSize='30px' color='black'>
   Total Product :{product.length}

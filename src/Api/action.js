@@ -11,7 +11,7 @@ const messsage = "Request Does Not Found Error 404 ";
 export const getProduct = (paramObj) => (dispatch) => {
    dispatch({ type: PRODUCT_GET_REQUEST_LOADING });
    axios
-      .get(`https://v6dej6.sse.codesandbox.io/products`, paramObj)
+      .get(`https://json-example.onrender.com/products`, paramObj)
       .then((res) => {
            console.log(res.data)
          dispatch({ type: PRODUCT_GET_REQUEST_SUCESSFULL, payload: res.data });

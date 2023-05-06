@@ -34,6 +34,9 @@ export const MainRoutes = () =>{
             <Route path="/signup" element={<SignupCard/>} />
             <Route path="/contact" element={<Contact/>} />
 
+            <Route path='/admin' element={<Admin/>}/>
+
+
             <Route path="/cart" element={<CartPage/>}/>
 
             <Route path="/shop" element={
@@ -43,7 +46,7 @@ export const MainRoutes = () =>{
             }/>
             <Route path="/single/:id" element={<SingleProductPage/>} />
 
-            <Route path='admin' element={<Admin/>}/>
+           
             <Route path='dashboard' element={<AdminDashboard/>}/>
 
             <Route path='/cart' element={<CartPage/>}/>

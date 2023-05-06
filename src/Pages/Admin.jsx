@@ -14,7 +14,7 @@ const initialState = {
 
 function Admin() {
    const [product, setProduct] = useState(initialState);
-   const { name, image, desc, price, category, gender } = product;
+   const { name, image, desc, price, category, gender, color } = product;
 
    const handleChange = (e) => {
       const { name, value } = e.target;
@@ -25,20 +25,18 @@ function Admin() {
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      
-        axios
-        //  .post(`https://json-example.onrender.com/products`, product)
-        .post(`http://localhost:8080/product`)
-        .then((res) => console.log(res.data));
-     console.log(product);
-     alert("Item has been added");
-      
-     
+
+      axios
+         //  .post(`https://json-example.onrender.com/products`, product)
+         .post(`http://localhost:8080/product`)
+         .then((res) => console.log(res.data));
+      console.log(product);
+      alert("Item has been added");
    };
    return (
       <DIV>
          <form onSubmit={handleSubmit}>
-            <h1>Add Product</h1>
+            <h1 style={{ fontFamily:"Brush Script MT"}}>Add Product</h1>
 
             <input
                required
@@ -64,7 +62,7 @@ function Admin() {
                type="text"
                value={desc}
                name="desc"
-               placeholder="Product desc"
+               placeholder="Product description"
             />
 
             <input
@@ -84,8 +82,31 @@ function Admin() {
                className="select-tags"
             >
                <option value="">Select Category</option>
-               <option value="top-wear">Top Wear</option>
-               <option value="bottom-wear">Bottom Wear</option>
+               <option value="shirt">Shirt</option>
+               <option value="jeans">Jeans</option>
+               <option value="sarees">Sarees</option>
+               <option value="kurtas">Kurtas</option>
+               <option value="shoes">Shoes</option>
+               <option value="sandals">Sandals</option>
+            </select>
+
+            <select
+               required
+               value={color}
+               onChange={(e) => handleChange(e)}
+               name="color"
+               className="select-tags"
+            >
+               <option value="">Select Color</option>
+
+               <option value="blue">Blue</option>
+               <option value="white">White</option>
+               <option value="black">Black</option>
+               <option value="gray">Gray</option>
+               <option value="maroon">Maroon</option>
+               <option value="pink">Pink</option>
+               <option value="olive">Olive</option>
+               <option value="multi">Multi</option>
             </select>
 
             <select
@@ -98,7 +119,7 @@ function Admin() {
                <option value="">Select Gender</option>
                <option value="male">Male</option>
                <option value="female">Female</option>
-               <option value="kids">Kids</option>
+               {/* <option value="unisex">Unisex</option> */}
             </select>
             <button type="submit">Add Product</button>
          </form>
@@ -109,29 +130,43 @@ function Admin() {
 export default Admin;
 
 const DIV = styled.div`
-   width: 400px;
+   width: 70%;
    margin: auto;
-   padding: 10px;
-   border: 1px solid black;
+   padding: 50px 10px;
+   background: #42a5f5;
+   border-radius: 5px;
+   fontFamily:"Brush Script MT"
+
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+
    form {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      width: 50%;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      border-radius:1%;
+      margin: 50px auto;
+      padding: 50px 0px;
       align-items: center;
       justify-content: center;
+      color: black;
+      background:white
    }
-   input {
+   input,
+   select {
       height: 40px;
       font-size: larger;
       width: 90%;
       border-radius: 5px;
+      border: 1px solid black;
+      padding: 10px;
+      color: black;
    }
-   select {
-      height: 40px;
-      font-size: large;
-      width: 90%;
-      border-radius: 5px;
-   }
+
    button {
       border: none;
       width: 40%;
