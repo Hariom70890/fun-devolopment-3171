@@ -3,7 +3,14 @@ import React from 'react'
 import { Button } from '@chakra-ui/react';
 import "../Css/Productcard.css"
 
+import { useDispatch } from 'react-redux';
+import { ADD } from '../Redux/cartReducer/action';
+
+
 export const ProductCard = ({id,category,color,description,gender,image,price,title}) => {
+  const dataObj = {
+    id,category,color,description,gender,image,price,title
+  }
   const randomColor = () => {
     const color1 = Math.floor(Math.random()*256);
     const color2 = Math.floor(Math.random()*108);
@@ -24,6 +31,7 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
     // console.log(id)
   }
 
+
   return (
     <DIV className="container">
      <img src={image} alt={title}/>
@@ -33,7 +41,9 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
      <h3 style={{fontSize:"15px", fontWeight: 600,color:"#FF8A65"}}>₹{price }</h3>
      <div class="buttons">
      
-     <Button size="md" fontSize="s"  colorScheme='gray' >Add</Button>
+
+     <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleCartPage}>Add</Button>
+
      <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleSinglePage}>details</Button>
      </div>
     </DIV>

@@ -13,7 +13,7 @@ export const getProduct = (paramObj) => (dispatch) => {
    axios
       .get(`https://json-example.onrender.com/products`, paramObj)
       .then((res) => {
-         //   console.log(res.data)
+           console.log(res.data)
          dispatch({ type: PRODUCT_GET_REQUEST_SUCESSFULL, payload: res.data });
       })
       .catch((err) => {
@@ -21,6 +21,16 @@ export const getProduct = (paramObj) => (dispatch) => {
          dispatch({ type: PRODUCT_GET_REQUEST_FAILURE });
       });
 };
+// --------------------------------------Post request for cart------------------------------------------
+  export const postRequestForCart =(data)=>{
+   axios.post(`https://v6dej6.sse.codesandbox.io/cart`,data)
+   .then((res)=>{
+      console.log(res)
+   })
+   .catch((err)=>{
+      console.log(err)
+   })
+  }
 
 
 //  .......... deleting the product ...........

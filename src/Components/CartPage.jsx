@@ -1,13 +1,51 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { Deletef } from '../Redux/cartReducer/action'
+import axios from "axios"
 
 const CartPage = () => {
 
- const getcartdata=useSelector((state)=>state.cartreducer)
-console.log(getcartdata)
-console.log("abc")
-console.log("getcartdata")
 
+
+  const [data,setData]=useState([])
+  const [onedata,setOnedata]=useState()
+
+const [quantity,setQuantity]=useState(1)
+
+const handlequantity=(val)=>{
+  setQuantity(prev=>prev+val)
+}
+
+const totalonesum=(val)=>{
+  setOnedata(quantity*val)
+}
+
+
+
+
+
+
+const handleadd=()=>{
+  axios.get(`https://v6dej6.sse.codesandbox.io/cart`).then((res)=>(
+    // console.log(res.data)
+    setData(res.data)
+  ))
+}
+
+const handledelete=(id)=>{
+  axios.delete(`https://v6dej6.sse.codesandbox.io/cart/${id}`).then(()=>(
+    // console.log(res.data)
+    handleadd()
+  ))
+}
+
+
+
+
+useEffect(()=>{
+  handleadd()
+},[])
 
 
 
@@ -20,130 +58,111 @@ console.log("getcartdata")
       <div className="col-md-8">
         <div className="card mb-4">
           <div className="card-header py-3">
-            <h5 className="mb-0">Cart - 2 items</h5>
+            <h5 className="mb-0">Cart - {data.length}</h5>
           </div>
           <div className="card-body">
           
-            <div className="row">
-              <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
-               
-                <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                    className="w-100" alt="Blue Jeans Jacket" />
-                  <a href="#!">
-                    <div className="mask" 
-                    //  style= {{backgroundColor: rgba(187, 40, 40, 0.2)}}
-                    
-                    ></div>
-                  </a>
-                </div>
-             
-              </div>
-
-              <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
-           
-                <p><strong>Blue denim shirt</strong></p>
-                <p>Color: blue</p>
-                <p>Size: M</p>
-                <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                  title="Remove item">
-                  <i className="fas fa-trash"></i>
-                </button>
-                <button type="button" className="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                  title="Move to the wish list">
-                  <i className="fas fa-heart"></i>
-                </button>
-              
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-             
-                <div className="d-flex mb-4" style={{maxwidth: "300px"}}>
-                  <button className="btn btn-primary px-3 me-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i className="fas fa-minus"></i>
-                  </button>
-
-                  <div className="form-outline">
-                    <input id="form1" min="0" name="quantity" value="1" type="number" className="form-control" />
-                    <label className="form-label" for="form1">Quantity</label>
-                  </div>
-
-                  <button className="btn btn-primary px-3 ms-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i className="fas fa-plus"></i>
-                  </button>
-                </div>
-              
-                <p className="text-start text-md-center">
-                  <strong>$17.99</strong>
-                </p>
-              
-              </div>
-            </div>
+            
            
 
             <hr className="my-4" />
 
+       
+
+     {data.map((item)=>(
+ <div className="row">
+ <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
+  
+   <div
+    className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light"
+    >
+     <img src={item.image}
+       className="w-100" 
+       alt="xyz"/>
+     <a href="#!">
+       <div className="mask" 
+     
+       ></div>
+     </a>
+   </div>
+
+ </div>
+
+ <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
+ 
+   <p><strong>{item.title}</strong></p>
+   <p>Color:{item.title}</p>
+   <p>Size: M</p>
+
+   <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+     title="Remove item"
+     onClick={()=>handledelete(item.id)}
+   
+     
+     >
+     <i className="fas fa-trash"></i>
+   </button>
+   <button type="button" className="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+     title="Move to the wish list">
+     <i className="fas fa-heart"></i>
+   </button>
+                 </div>
+
+ <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+ 
+   <div className="d-flex mb-4" style={{maxwidth: "300px"}}>
+     <button className="btn btn-primary px-3 me-2"
+       disabled={quantity===1}
+       onClick={()=>handlequantity(-1)}
+       >
+       <i className="fas fa-minus"></i>
+     </button>
+
+     <div className="form-outline">
+       <input id="form1" min="0" name="quantity" value={quantity}
+       
+       type="number" className="form-control" />
+       <label className="form-label" for="form1">Quantity</label>
+     </div>
+
+     <button className="btn btn-primary px-3 ms-2"
+     onClick={()=>handlequantity(1)}
+    
+     
+     >
+       <i className="fas fa-plus"></i>
+     </button>
+   </div>
+
+   <p className="text-start text-md-center">
+     <strong>price:Rs {item.price}</strong>
+   </p>
+   <p className="text-start text-md-center">
+     <strong></strong>
+   </p>
+  
+ 
+ </div>
+</div>
+     ))}  
+
+          
            
-            <div className="row">
-              <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
-               
-                <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-                    className="w-100" 
-                    alt="xyz"/>
-                  <a href="#!">
-                    <div className="mask" 
-                    // style={{backgroundColor: "grey"}}
-                    ></div>
-                  </a>
-                </div>
-             
-              </div>
-
-              <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
-              
-                <p><strong>Red hoodie</strong></p>
-                <p>Color: red</p>
-                <p>Size: M</p>
-
-                <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                  title="Remove item">
-                  <i className="fas fa-trash"></i>
-                </button>
-                <button type="button" className="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                  title="Move to the wish list">
-                  <i className="fas fa-heart"></i>
-                </button>
-                              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-              
-                <div className="d-flex mb-4" style={{maxwidth: "300px"}}>
-                  <button className="btn btn-primary px-3 me-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i className="fas fa-minus"></i>
-                  </button>
-
-                  <div className="form-outline">
-                    <input id="form1" min="0" name="quantity" value="1" type="number" className="form-control" />
-                    <label className="form-label" for="form1">Quantity</label>
-                  </div>
-
-                  <button className="btn btn-primary px-3 ms-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i className="fas fa-plus"></i>
-                  </button>
-                </div>
-             
-                <p className="text-start text-md-center">
-                  <strong>$17.99</strong>
-                </p>
-              
-              </div>
-            </div>
          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
         </div>
         <div className="card mb-4">
