@@ -120,7 +120,7 @@ export const Product = () => {
   Total Product :{product.length}
 </Text>
 
-    <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text>
+    {/* <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text> */}
 <select id="sort" value={order} onChange={handleSortChange}>
     <option value="undefined">--Sort by Price--</option>
 

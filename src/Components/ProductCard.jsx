@@ -5,6 +5,7 @@ import "../Css/Productcard.css"
 
 import { useDispatch } from 'react-redux';
 import { ADD } from '../Redux/cartReducer/action';
+import { postRequestForCart } from '../Api/action';
 
 
 export const ProductCard = ({id,category,color,description,gender,image,price,title}) => {
@@ -31,6 +32,9 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
     // console.log(id)
   }
 
+  const handleCartPage =()=>{
+    postRequestForCart(dataObj)
+  }
 
   return (
     <DIV className="container">
