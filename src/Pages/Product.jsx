@@ -52,13 +52,13 @@ const handleSortChange = (e)=>{
 // console.log(sortdata)
 // console.log(product.length)
 // setLocalstorageData("total",product.length)
- const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
+//  const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
 //  getDataCategoryLS = getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1);
 
   return (
     <div className='side-bar'><Sidebar/>
     <DIV className='product-container'>
-    <Text className='text-male' fontSize='40px' color='black'>{GenderforDisplay}</Text>
+    <Text className='text-male' fontSize='40px' color='black'>{""}</Text>
     <div className='total-sort-conatiner'>
     <Text fontSize='30px' color='black'>
   Total Product :{product.length}
