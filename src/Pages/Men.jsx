@@ -7,7 +7,7 @@ export const Men = ( ) =>{
     const [maleData,setMaleData] = useState([]);
 
     const getMenFunction=()=>{
-      axios.get(`https://v6dej6.sse.codesandbox.io/products`)
+      axios.get(`https://json-example.onrender.com/products`)
       .then((res)=>{
         const upDatedMenData = res.data.filter((ele)=> ele.gender == "male");
         console.log("ddd",upDatedMenData)
