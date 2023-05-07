@@ -222,7 +222,7 @@ const onBuy=()=>{
                         </div>
 
                         <p className="text-start text-md-center">
-                          <strong>price:Rs {item.price}</strong>
+                          <strong>price: ₹ {item.price}</strong>
                         </p>
                         <p className="text-start text-md-center">
                           <strong></strong>
@@ -310,7 +310,7 @@ const onBuy=()=>{
                           <p className="mb-0">(including VAT)</p>
                         </strong>
                       </div>
-                      <span><strong>{price}</strong></span>
+                      <span><strong> ₹ {price}</strong></span>
                     </li>
                   </ul>
 
