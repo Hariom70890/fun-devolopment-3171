@@ -2,11 +2,18 @@ import styled from '@emotion/styled';
 import React from 'react'
 import { Button } from '@chakra-ui/react';
 import "../Css/Productcard.css"
+
 import { checkingDataInCart, postRequestForCart } from '../Api/action';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
+import { useDispatch } from 'react-redux';
+
+
+
 
 
 export const ProductCard = ({id,category,color,description,gender,image,price,title}) => {
@@ -56,7 +63,10 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
 
      <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleCartPage}>Add</Button>
 
-     <Button size="md" fontSize="s"  colorScheme='gray' ><Link to={`/SingleProductPage/${id}`}>details</Link>  </Button>
+<Link to={`/product/${id}`}>
+     <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleSinglePage}>details</Button>
+     </Link>
+
      </div>
      <ToastContainer
 position="top-center"
