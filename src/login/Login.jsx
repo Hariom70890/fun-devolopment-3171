@@ -18,7 +18,7 @@ import { useContext, useReducer, useState } from 'react';
   import {Link, Navigate, json} from 'react-router-dom'
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { LoginFailure, LoginSuccess } from '../Redux/Login/action';
+import { AdminFailure, AdminSuccess, LoginFailure, LoginSuccess } from '../Redux/Login/action';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
 
@@ -56,7 +56,8 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
     const dispatchh=useDispatch()
     const [state,dispatch]=useReducer(reducer,initialState)
     const auth=useSelector((store)=>store.AuthReducer.isAuth)
-    const Auth=localStorage.getItem("isAuth")
+    const adminAuth=useSelector((store)=>store.AuthReducer.adminAuth)
+    
 
    
    
@@ -66,16 +67,27 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
       const response = await axios.get(`https://v6dej6.sse.codesandbox.io/user`);
       const users = response.data;
       
-      const user = users.find((u) => u.email === state.email && u.password === state.password);
+      const user = users.find((u) => u.email === state.email && u.password === state.password&&u.email!="admin"&&u.password!="admin");
+      const admin=users.find((u)=>u.email=="admin"&&u.password=="admin")
+      
+
+      if(admin){
+        dispatchh(AdminSuccess(true))
+       
+      }else{
+        dispatchh(AdminFailure(false))
+       
+      }
   
       if (user) {
         toast.success('✔ successfully login');
         dispatchh(LoginSuccess(true))
-        console.log('true',auth)
+       
+       
       } else {
         toast.error('plz check your email or password');
         dispatch(LoginFailure(false))
-        console.log('false',auth)
+       
       }
     } catch (error) {
       console.log(error);
@@ -84,9 +96,15 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
   
   const handleLogin = () => {
     fetchData();
+ 
   }
 if(auth){
+  console.log("User Login Successful")
   return <Navigate to="/" />
+}
+if(adminAuth){
+  alert('Admin Login Successful')
+  return <Navigate to="/dashboard" />
 }
     return (
       <Flex

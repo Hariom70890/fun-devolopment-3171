@@ -6,6 +6,7 @@ import { MainRoutes } from './Components/MainRoutes';
 
 import { Navbar } from './Components/Navbar';
 import Login from './login/Login';
+// import {checkout} from "./Pages/checkout"
 
 function App() {
   return (
@@ -13,7 +14,11 @@ function App() {
         <Navbar/>
         <MainRoutes/>
         <Footer/>
-       
+          
+
+
+
+
     </div>
   );
 }

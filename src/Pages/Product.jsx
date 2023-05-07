@@ -12,25 +12,25 @@ import { getLocalstorageData, setLocalstorageData } from "../Api/LocalStorage";
 import { auto } from "@popperjs/core";
 
 export const Product = () => {
-   // let getDataCategoryLS = getLocalstorageData("headingCat")
-   // let getDataGenderLS = getLocalstorageData("headingGen")
-   const dispatch = useDispatch();
-   const [searchParams, setSearchParams] = useSearchParams();
-   const location = useLocation();
-   const { product, isError, isLoading } = useSelector((store) => {
-      return {
-         product: store.productReducer.products,
-         isLoading: store.productReducer.isLoading,
-         isError: store.productReducer.isError,
-      };
-   });
-   // const initialSort = searchParams.get("price")
-   // const initialSortAlp = searchParams.get("title")
-   const [order, setOrderData] = useState("");
-   const [title, setTitle] = useState("");
-   // const [currentPage, setCurrentPage] = useState(1);
-   // const [pageSize, setPageSize] = useState(10);
-   // console.log(initialSort)
+  let getDataCategoryLS = getLocalstorageData("headingCat")
+  let getDataGenderLS = getLocalstorageData("headingGen")
+  const dispatch = useDispatch();
+  const [searchParams,setSearchParams] =  useSearchParams();
+  const location = useLocation()
+    const {product,isError,isLoading} = useSelector((store)=>{
+        return {
+            product : store.productReducer.products,
+            isLoading : store.productReducer.isLoading,
+            isError : store.productReducer.isError,
+        }
+    })
+    // const initialSort = searchParams.get("price")
+    // const initialSortAlp = searchParams.get("title")
+    const [order,setOrderData] = useState("");
+    const [title,setTitle] = useState("");
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [pageSize, setPageSize] = useState(10);
+// console.log(initialSort)
 
    // useEffect(()=>{
    //     setSearchParams(order)
@@ -104,18 +104,18 @@ export const Product = () => {
    //  const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
    //  getDataCategoryLS = getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1);
 
-   return (
-      <div className="side-bar">
-         <Sidebar />
-         <DIV className="product-container">
-            <div className="total-sort-conatiner">
-               <Text fontSize="30px" color="black">
-                  Total Product :{product.length}
-               </Text>
+  return (
+    <div className='side-bar'><Sidebar/>
+    <DIV className='product-container'>
 
-               {/* <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text> */}
-               <select id="sort" value={order} onChange={handleSortChange}>
-                  <option value="undefined">--Sort by Price--</option>
+    <div className='total-sort-conatiner'>
+    <Text fontSize='30px' color='black'>
+  Total Product :{product.length}
+</Text>
+
+    {/* <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text> */}
+<select id="sort" value={order} onChange={handleSortChange}>
+    <option value="undefined">--Sort by Price--</option>
 
                   <option value="asc">Low to High</option>
                   <option value="title_asc">Ascending</option>
@@ -124,33 +124,31 @@ export const Product = () => {
                </select>
             </div>
 
-            <div className="loding-product">
-               {isLoading ? (
-                  <Spinner
-                     className="spinner"
-                     thickness="4px"
-                     speed="0.65s"
-                     emptyColor="gray.200"
-                     color="blue.500"
-                     size="xl"
-                  />
-               ) : (
-                  <div className="product-card">
-                     {product?.map((ele) => {
-                        return <ProductCard key={ele.id} {...ele} />;
-                     })}
-                  </div>
-               )}
-            </div>
-            {/* <div>
+    <div className='loding-product'>{isLoading ? (<Spinner className='spinner'
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+/>) :(
+   <div className='product-card'>
+    {product?.map((ele)=>{
+    return <ProductCard key={ele.id} {...ele} />
+    })
+    }
+    </div>
+)  }
+</div>
+   {/* <div>
       <button onClick={handleIncrement}>++</button>
       <button onClick={handleDecrement}>--</button>
     </div> */}
-         </DIV>
-         {isError && <h2>Something went wrong...!</h2>}
-      </div>
-   );
-};
+    </DIV>
+{isError && <h2>Something went wrong...!</h2>}
+    </div>
+  )
+}
+
 
 const DIV = styled.div`
    width: 100%;
