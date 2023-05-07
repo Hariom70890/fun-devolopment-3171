@@ -62,7 +62,7 @@ const btnRef = React.useRef(null)
 
 
   const handleadd = () => {
-    axios.get(`https://v6dej6.sse.codesandbox.io/cart`).then((res) => {
+    axios.get(`https://json-example.onrender.com/cart`).then((res) => {
       //console.log("res",res.data)
       let updateddata = res.data.map((el) => ({ ...el, quantity: 1 }))
       //  console.log("ooo",updateddata)
@@ -72,7 +72,7 @@ const btnRef = React.useRef(null)
   //  console.log("data",Data)
 
   const handledelete = (id) => {
-    axios.delete(`https://v6dej6.sse.codesandbox.io/cart/${id}`).then(() => (
+    axios.delete(`https://json-example.onrender.com/cart/${id}`).then(() => (
       // console.log(res.data)
       handleadd()
     ))
