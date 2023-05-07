@@ -1,66 +1,58 @@
 import React from 'react';
 import { Box, VStack, HStack, UnorderedList, ListItem, List, Input, Button, SimpleGrid } from '@chakra-ui/react'
+import styled from 'styled-components';
 
 const Footer = () => {
   return (
-    <Box
-    bg="#333333"
-    color="#FFFFFF"
-    px={{ base: 4, sm: 6, md: 8 }}
-    py={{ base: 4, sm: 6, md: 8 }} >
-       <VStack
-        spacing={4}
-        align='start'
-        maxW={{ base: 'full', sm: '2xl', md: '6xl' }}
-        mx='auto'
-      >
-        <HStack
-          spacing={{ base: 4, md: 8 }}
-          justify={{ base: 'space-around', md: 'space-between' }}
-          flexWrap={{ base: 'wrap', md: 'nowrap' }}
-          w='full'
-        >
-            <VStack>
-        <img src="https://user-images.githubusercontent.com/112471219/236364309-5c7783e5-cca2-4152-9ff6-6eafb2c3474a.png" alt="" width="250px" />
-        <Box>
-          <h6>REAL DESIGNS BY REAL ARISTS</h6>
-          <h6>FOR REAL PEOPLE</h6>
-        </Box>
-        </VStack>
+    <DIV >
+       
         
-        <List>
+        <div className='fDiv'>
+        <img src="https://user-images.githubusercontent.com/112471219/236364309-5c7783e5-cca2-4152-9ff6-6eafb2c3474a.png" alt="" width="250px" />
+  
+  <h5>REAL DESIGNS BY REAL ARISTS</h5>
+  <h5>FOR REAL PEOPLE</h5>
+        </div>
+           
+        
+       
+        <div className='footerAbout'>
+        <div>
             <h5>PRODUCT</h5>
-            <ListItem>Jacket</ListItem>
-            <ListItem>Shirt</ListItem>
-            <ListItem>T-shirt</ListItem>
-            <ListItem>Dresses</ListItem>
-            <ListItem>Outwear</ListItem>
-            <ListItem>Bottoms</ListItem>
-          </List>
-          <List>
+            <p>Jacket</p>
+            <p>Shirt</p>
+            <p>T-shirt</p>
+            <p>Dresses</p>
+            <p>Outwear</p>
+            <p>Bottoms</p>
+          </div>
+          <div>
             <h5>BUYING</h5>
-            <ListItem>Shop</ListItem>
-            <ListItem>Term of Use</ListItem>
-            <ListItem>Privacy</ListItem>
-            <ListItem>How & works</ListItem>
-            <ListItem>Customer Services</ListItem>
-          </List>
-          <List>
-            <h5>SOCIEL</h5>
-            <ListItem>Instagram</ListItem>
-            <ListItem>Facebook</ListItem>
-            <ListItem>Twetter</ListItem>
+            <p>Shop</p>
+            <p>Term of Use</p>
+            <p>Privacy</p>
+            <p>How & works</p>
+            <p>Customer Services</p>
+          </div>
+          <div>
+            <h5>SOCIAL</h5>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twetter</p>
             
-          </List>
+          </div>
+        </div>
+       
         
           
-        <VStack align='start'>
-          <Input width={{ base: 'full', md: '250px' }} placeholder="EMAIL ADDRESS" />
-          <Button colorScheme="blue" >Send</Button>
-        </VStack>
-        </HStack>
-      </VStack>
-    </Box>
+        <div className='footerEmail' >
+        <Input borderRadius={20}  placeholder="EMAIL ADDRESS" />
+          <Button colorScheme="orange" borderRadius={20} >Send</Button>
+        </div>
+         
+       
+  
+    </DIV>
     
      
 
@@ -69,3 +61,53 @@ const Footer = () => {
 
 export default Footer;
 
+const DIV = styled.div`
+  background-color: #161616 ;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  .fDiv > img{
+    height: 60px;
+    border-radius: 20px;
+    /* display: flex; */
+  }
+  .footerAbout{
+    display: flex;
+    gap: 30px;
+    line-height: 10px;
+    justify-content: space-between;
+  }
+  .footerAbout  p{
+    color: gray;
+  }
+  .fDiv > h5 {
+    margin: 10px 0;
+  }
+  .footerEmail{
+    display: flex;
+    gap: 20px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+
+    flex-direction: column;
+
+    .footerAbout  p{
+    color: gray;
+    font-size: small;
+  }
+  .fDiv > h5 , .footerAbout h5 {
+    font-size: small;
+  }
+  .fDiv > img {
+    width: 50%;
+    border-radius: 20px;
+  }
+  .footerEmail{
+    display: flex;
+  }
+  }
+
+`

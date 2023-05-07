@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
-
+import ProductCard from "../Pages/SingleProductPage"
 
 export const HomeProductCart = ({image,title,price})=>{
     const [active,setActive] = useState(false)
@@ -10,6 +10,7 @@ export const HomeProductCart = ({image,title,price})=>{
              <div className="proDiv" onMouseEnter={()=>setActive(true)} onMouseLeave={()=>setActive(false)}   >
             <div className="imgContainer">
             <img className = { active ? "active" : false }  src={image} alt="" />
+            
             <h2>SHOP NOW</h2>
             </div>
         
@@ -22,7 +23,7 @@ export const HomeProductCart = ({image,title,price})=>{
         </div>
 
         </div>
-        <h3 className="orangePrice">${price}</h3>
+        <h3 className="orangePrice">₹{price}</h3>
     </div>
 
         </DIV>

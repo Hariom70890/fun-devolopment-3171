@@ -11,7 +11,7 @@ import AdminDashboard from '../Pages/AdminDashboard'
 import Login from "../login/Login"
 import SignupCard from "../login/SignUp"
 import CartPage from "./CartPage"
-
+import Payment from "./Payment"
 // import CartPage from "./CartPage"
 
 import PrivateRouting from "./PrivateRouting"
@@ -49,7 +49,11 @@ export const MainRoutes = () =>{
             <Product/>
             
             }/>
+
+            <Route path="/payment" element={<Payment/>} />
+       
             <Route path="/product/:id" element={<SingleProductPage/>} />
+
 
            
             <Route path='/dashboard' element={<AdminDashboard/>}/>
