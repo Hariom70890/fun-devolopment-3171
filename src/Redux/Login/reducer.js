@@ -1,8 +1,9 @@
-import { LOGIN_FAILURE, LOGIN_SUCCESS } from "./actionType";
+import { ADMIN_LOGIN_FAILURE, ADMIN_LOGIN_SUCCESS, LOGIN_FAILURE, LOGIN_SUCCESS } from "./actionType";
 
 
 const intitalState={
     isAuth:false,
+    adminAuth:false,
 }
 
 export const AuthReducer=(state=intitalState,{type,payload})=>{
@@ -18,6 +19,18 @@ export const AuthReducer=(state=intitalState,{type,payload})=>{
             return {
                 
                 isAuth:payload,
+            }
+        }
+        case ADMIN_LOGIN_SUCCESS:{
+            return {
+                
+                adminAuth:payload,
+            }
+        }
+        case ADMIN_LOGIN_FAILURE:{
+            return {
+                
+                adminAuth:payload,
             }
         }
         default:{
