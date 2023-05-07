@@ -6,6 +6,7 @@ import "../Css/Productcard.css"
 import { useDispatch } from 'react-redux';
 import { ADD } from '../Redux/cartReducer/action';
 import { postRequestForCart } from '../Api/action';
+import { Link } from 'react-router-dom';
 
 
 export const ProductCard = ({id,category,color,description,gender,image,price,title}) => {
@@ -47,8 +48,9 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
      
 
      <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleCartPage}>Add</Button>
-
+<Link to={`/product/${id}`}>
      <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleSinglePage}>details</Button>
+     </Link>
      </div>
     </DIV>
   )

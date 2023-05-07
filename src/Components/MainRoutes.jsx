@@ -16,6 +16,7 @@ import CartPage from "./CartPage"
 
 import PrivateRouting from "./PrivateRouting"
 import SingleProductPage from "../Pages/SingleProductPage"
+// import PaymentPage from "../Pages/PaymentPage"
 
 
 
@@ -37,19 +38,24 @@ export const MainRoutes = () =>{
             <Route path='/admin' element={<Admin/>}/>
 
 
-            <Route path="/cart" element={<CartPage/>}/>
+            <Route path="/cart" element={
+            
+            <CartPage/>
+           
+            }/>
 
             <Route path="/shop" element={
                 
             <Product/>
             
             }/>
-            <Route path="/single/:id" element={<SingleProductPage/>} />
+            <Route path="/product/:id" element={<SingleProductPage/>} />
 
            
-            <Route path='dashboard' element={<AdminDashboard/>}/>
+            <Route path='/dashboard' element={<AdminDashboard/>}/>
 
             <Route path='/cart' element={<CartPage/>}/>
+        
         </Routes>
 
   )
