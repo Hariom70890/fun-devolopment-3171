@@ -80,7 +80,7 @@ setLocalstorageData("headingGen",headingGen)
     <div className='sidebar-container' >
         <div className='filter-div'>
         <img src={filterIcon}/>
-        <Text fontSize='30px' color='black'> Refined By</Text>  {/* <FcFilledFilter />  */}
+        <Text className='filter-div' fontSize='30px' color='black'> Refined By</Text>  {/* <FcFilledFilter />  */}
         </div>
       <div className='category-gender'>
       <Text fontSize='25px' color='black'> Gender</Text>

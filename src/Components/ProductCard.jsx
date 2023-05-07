@@ -2,10 +2,11 @@ import styled from '@emotion/styled';
 import React from 'react'
 import { Button } from '@chakra-ui/react';
 import "../Css/Productcard.css"
-
-import { useDispatch } from 'react-redux';
-import { ADD } from '../Redux/cartReducer/action';
-import { postRequestForCart } from '../Api/action';
+import { checkingDataInCart, postRequestForCart } from '../Api/action';
+import { Link } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const ProductCard = ({id,category,color,description,gender,image,price,title}) => {
@@ -28,14 +29,21 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
   };
   
   const defaultColor2 = randomColor2();
-  const handleSinglePage = ()=>{
-    // console.log(id)
-  }
 
-  const handleCartPage =()=>{
-    postRequestForCart(dataObj)
-  }
-
+  const handleCartPage = () => {
+    checkingDataInCart().then((res) => {
+        // console.log(res.data)
+        const checkingBipinCart = res.data.find((ele)=>ele.id==dataObj.id);
+        if (checkingBipinCart) {
+          // console.log(checkingBipinCart,"abcn")
+          toast.warning("Product already in Cart!")
+          
+        } else {
+          postRequestForCart(dataObj);
+          toast.success("Product Added to the Cart!")
+        }
+      })
+  };
   return (
     <DIV className="container">
      <img src={image} alt={title}/>
@@ -48,8 +56,21 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
 
      <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleCartPage}>Add</Button>
 
-     <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleSinglePage}>details</Button>
+     <Button size="md" fontSize="s"  colorScheme='gray' ><Link to={`/SingleProductPage/${id}`}>details</Link>  </Button>
      </div>
+     <ToastContainer
+position="top-center"
+  autoClose={1000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="light"
+  style={{ borderRadius: 0, boxShadow: 'none' }}
+/>
     </DIV>
   )
 }

@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import {NavLink,Link} from "react-router-dom"
+import { useEffect, useRef, useState } from "react";
+import {NavLink,Link, useSearchParams} from "react-router-dom"
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/navbar.css"
 import styled from "styled-components";
@@ -11,9 +11,28 @@ import {SearchIcon} from "@chakra-ui/icons"
 
 // import styled from "styled-components";
 import logo_final from "../images/logo_final.png"
+import { getProduct } from "../Api/action";
+import { useDispatch } from "react-redux";
 
 // import styled from "styled-components";
 export const Navbar = () =>{
+	{/* -------------------------------------------------------I added search here------------------------- */}
+	const dispatch = useDispatch()
+	const [searchParams,setSearchParams] = useSearchParams();
+	const initialParams = searchParams.getAll("category" || "color" ||"gender")
+	const [searchText,setSearchText] = useState(initialParams || "");
+	// console.log(searchText,"search")
+	// console.log(initialParams,"search")
+
+	const paramObj = {
+		params : {
+		  q : searchText && searchText
+		}
+	  }
+	  useEffect(()=>{
+		dispatch(getProduct(paramObj))
+	  },[searchText])
+	{/* -------------------------------------------------------I added search here------------------------- */}
 	const navRef = useRef();
 
 	const showNavbar = () => {
@@ -47,7 +66,8 @@ export const Navbar = () =>{
 					onClick={showNavbar}>
 					<Icon as={FaTimes} />
 				</button>
-				
+				{/* -------------------------------------------------------I added search here------------------------- */}
+				<input type="text" placeholder="Search" onChange={(e)=>setSearchText(e.target.value)}/>
 			</nav>
             <div className="navIcons">
                     <SearchIcon/>
