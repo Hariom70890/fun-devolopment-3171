@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import "../Css/product.css"
-import { useDispatch, useSelector, } from 'react-redux'
-import { getProduct } from '../Api/action'
-import { ProductCard } from '../Components/ProductCard'
-import styled from '@emotion/styled';
-import { Spinner, Text } from '@chakra-ui/react'
-import { Stack} from '@chakra-ui/react'
-import { Sidebar, passFun } from '../Components/Sidebar';
-import { useSearchParams ,useLocation, useParams} from 'react-router-dom'
-import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage'
-import { auto } from '@popperjs/core'
+import React, { useEffect, useState } from "react";
+import "../Css/product.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getProduct } from "../Api/action";
+import { ProductCard } from "../Components/ProductCard";
+import styled from "@emotion/styled";
+import { Spinner, Text } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
+import { Sidebar, passFun } from "../Components/Sidebar";
+import { useSearchParams, useLocation, useParams } from "react-router-dom";
+import { getLocalstorageData, setLocalstorageData } from "../Api/LocalStorage";
+import { auto } from "@popperjs/core";
 
 export const Product = () => {
   let getDataCategoryLS = getLocalstorageData("headingCat")
@@ -32,108 +32,97 @@ export const Product = () => {
     // const [pageSize, setPageSize] = useState(10);
 // console.log(initialSort)
 
-  // useEffect(()=>{
-  //     setSearchParams(order)
-  // },[order])
+   // useEffect(()=>{
+   //     setSearchParams(order)
+   // },[order])
 
-    const paramObj = {
-      params:{
-        category:searchParams.getAll("category"),
-        gender : searchParams.getAll("gender"),
-        color : searchParams.getAll("color"),
-        _sort: order ? "price" :  title ? "title" : undefined, 
-        _order: order || title || undefined,
-        // _page: currentPage,
-        // _limit: pageSize,
-      }
-      
-    }
+   const paramObj = {
+      params: {
+         category: searchParams.getAll("category"),
+         gender: searchParams.getAll("gender"),
+         color: searchParams.getAll("color"),
+         _sort: order ? "price" : title ? "title" : undefined,
+         _order: order || title || undefined,
+         // _page: currentPage,
+         // _limit: pageSize,
+      },
+   };
 
-    useEffect(()=>{
-        dispatch(getProduct(paramObj))
-    },[location.search,order,title])//currentPage, pageSize
+   useEffect(() => {
+      dispatch(getProduct(paramObj));
+   }, [location.search, order, title]); //currentPage, pageSize
 
-
-    // else {
-    //   setOrderData(value);
-    //   setTitle("");
-    // }
-    const handleSortChange = (e) => {
+   // else {
+   //   setOrderData(value);
+   //   setTitle("");
+   // }
+   const handleSortChange = (e) => {
       const value = e.target.value;
-    
-      if (value =="title_asc") {
-        setTitle("asc");
-        setOrderData("");
-      } else if (value =="title_desc") {
-        setTitle("desc");
-        setOrderData("");
-      } 
-      else if(value == "asc"){
-        setOrderData("asc");
-        setTitle("")
+
+      if (value == "title_asc") {
+         setTitle("asc");
+         setOrderData("");
+      } else if (value == "title_desc") {
+         setTitle("desc");
+         setOrderData("");
+      } else if (value == "asc") {
+         setOrderData("asc");
+         setTitle("");
+      } else if (value == "desc") {
+         setOrderData("desc");
+         setTitle("");
+      } else if (value == undefined) {
+         setOrderData(undefined);
+         setTitle(undefined);
       }
-      else if(value == "desc"){
-        setOrderData("desc");
-        setTitle("")
-      }
-      else if (value == undefined){
-        setOrderData(undefined);
-        setTitle(undefined)
-      }
-    };
-    // function handleIncrement() {
-    //   setCurrentPage(currentPage + 1);
-    // }
-  
-    // function handleDecrement() {
-    //   setCurrentPage(currentPage - 1);
-    // }
-    // const handlePageChange = (page) => {
-    //   setCurrentPage(page +1);
-    // };
-    // const pageCount = Math.ceil(product.length/pageSize);
+   };
+   // function handleIncrement() {
+   //   setCurrentPage(currentPage + 1);
+   // }
 
-    // const startIndex = (currentPage - 1) * pageSize;
-    // const endIndex = startIndex + pageSize;
-    // const pagedProduct = product.slice(startIndex, endIndex);
-    
+   // function handleDecrement() {
+   //   setCurrentPage(currentPage - 1);
+   // }
+   // const handlePageChange = (page) => {
+   //   setCurrentPage(page +1);
+   // };
+   // const pageCount = Math.ceil(product.length/pageSize);
 
-// const handleSortChange = (e)=>{
-//  const {value} = e.target
-// setTitle(value)
-//  setOrderData(value)
-// }
+   // const startIndex = (currentPage - 1) * pageSize;
+   // const endIndex = startIndex + pageSize;
+   // const pagedProduct = product.slice(startIndex, endIndex);
 
+   // const handleSortChange = (e)=>{
+   //  const {value} = e.target
+   // setTitle(value)
+   //  setOrderData(value)
+   // }
 
-// console.log(sortdata)
-// console.log(product.length)
-// setLocalstorageData("total",product.length)
-//  const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
-//  getDataCategoryLS = getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1);
+   // console.log(sortdata)
+   // console.log(product.length)
+   // setLocalstorageData("total",product.length)
+   //  const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
+   //  getDataCategoryLS = getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1);
 
   return (
     <div className='side-bar'><Sidebar/>
     <DIV className='product-container'>
-    <Text className='text-male'  fontSize='35px' color='Black'>{
-      (getDataGenderLS ||"").charAt(0).toUpperCase()+(getDataGenderLS ||"").slice(1)
-      }</Text>
+
     <div className='total-sort-conatiner'>
-    <Text pt="5" pl="4" fontSize='25px' color='black'>
-  Total Product {product.length}
+    <Text fontSize='30px' color='black'>
+  Total Product :{product.length}
 </Text>
-<Text pt="5" className='text-cat' fontSize='30px' color='gray'>{
-  (getDataCategoryLS || "").charAt(0).toUpperCase()+(getDataCategoryLS ||"").slice(1)
-}</Text>
+
+    {/* <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text> */}
 <select id="sort" value={order} onChange={handleSortChange}>
     <option value="undefined">--Sort by Price--</option>
 
-    <option value="asc">Low to High</option>
-    <option value="title_asc">Ascending</option>
-    <option value="title_desc">Descending</option>
-    <option value="desc">High to Low</option>
-
-</select>
-    </div>
+                  <option value="asc">Low to High</option>
+                  <option value="title_asc">Ascending</option>
+                  <option value="title_desc">Descending</option>
+                  <option value="desc">High to Low</option>
+               </select>
+            </div>
 
     <div className='loding-product'>{isLoading ? (<Spinner className='spinner'
   thickness='4px'
@@ -150,6 +139,10 @@ export const Product = () => {
     </div>
 )  }
 </div>
+   {/* <div>
+      <button onClick={handleIncrement}>++</button>
+      <button onClick={handleDecrement}>--</button>
+    </div> */}
     </DIV>
 {isError && <h2>Something went wrong...!</h2>}
     </div>
@@ -158,10 +151,9 @@ export const Product = () => {
 
 
 const DIV = styled.div`
-width: 100%;
-.spinner{
-  margin-left: 70vh;
- margin-top: 20vh;
-}
-
+   width: 100%;
+   .spinner {
+      margin-left: 70vh;
+      margin-top: 20vh;
+   }
 `;

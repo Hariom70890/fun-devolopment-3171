@@ -104,7 +104,7 @@ if(auth){
 }
 if(adminAuth){
   alert('Admin Login Successful')
-  return <Navigate to="/dashboard" />
+  return <Navigate to="/admindashboard" />
 }
     return (
       <Flex
