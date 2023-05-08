@@ -47,7 +47,8 @@ const CartPage = () => {
     ){
       setaddress({name, mobile, email, pin, city, state, country, building, area, landmark, gstin})
       alert("Added all the details")
-      handledeleteAll()
+     
+
      
     }
     else{
