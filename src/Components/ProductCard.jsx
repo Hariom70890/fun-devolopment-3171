@@ -64,7 +64,7 @@ export const ProductCard = ({id,category,color,description,gender,image,price,ti
      <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleCartPage}>Add</Button>
 
 <Link to={`/product/${id}`}>
-     <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleSinglePage}>details</Button>
+     {/* <Button size="md" fontSize="s"  colorScheme='gray' onClick={handleSinglePage}>details</Button> */}
      </Link>
 
      </div>

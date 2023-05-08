@@ -68,7 +68,7 @@ export const Home = () => {
                         </div>
                         <h3>SUSTAINBILITY</h3>
                      </div>
-                     <p>
+                     <p style={{ cursor: 'url("../images/Curser.png")' }} >
                         We're challenging contional retail, putting an end to
                         dead stock, unconventional waste and more funtastic.
                      </p>
@@ -115,7 +115,7 @@ const DIV = styled.div`
    .topImages > :nth-child(1) {
       border-radius: 10px;
       width: 100%;
-      height: 100%;
+      /* height: 100%; */
       /* overflow-x: hidden; */
       /* height: 600px; */
       /* overflow-y: hidden; */
@@ -123,10 +123,14 @@ const DIV = styled.div`
       /* cursor: url("../images/buyicon.svg"), auto; */
       cursor: pointer;
    }
-
+   .nextImages{
+      /* height: 90%; */
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+   }
    .nextImages > img {
       width: 100%;
-      /* height: 400px; */
+      
       border-radius: 10px;
    }
    .capsImage {
@@ -141,12 +145,12 @@ const DIV = styled.div`
    .capsImage > img {
       /* padding: 5px; */
       border-radius: 10px;
-      /* width: 50%; */
+      width: 95%;
       /* margin: auto; */
       /* height: 50%; */
    }
    .brandDesc {
-      font-size: 40px;
+      font-size: 30px;
       width: 95%;
       /* margin-top: 50px; */
       /* word-wrap: inherit; */
@@ -163,11 +167,11 @@ const DIV = styled.div`
    .allCollection {
       border: black 1px solid;
       float: left;
-      height: 50px;
-      font-size: 40px;
+      /* height: 50px; */
+      font-size: 25px;
       line-height: 30px;
-      margin: 5px;
-      padding: 5px 10px;
+      margin: 3px;
+      padding: 2px 10px;
       /* position: relative; */
       width: fit-content;
       border-radius: 50px;
@@ -266,7 +270,7 @@ const DIV = styled.div`
          text-align: justify;
       }
       .allCollection {
-         font-size: large;
+         font-size: small;
       }
       .VisionDiv {
          flex-direction: column;

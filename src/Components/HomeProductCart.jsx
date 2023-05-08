@@ -11,7 +11,7 @@ export const HomeProductCart = ({image,title,price})=>{
             <div className="imgContainer">
             <img className = { active ? "active" : false }  src={image} alt="" />
             
-            <h2>SHOP NOW</h2>
+            <h2 className = { active ? "buyBtn" : false }>SHOP NOW</h2>
             </div>
         
         <div>
@@ -32,6 +32,12 @@ export const HomeProductCart = ({image,title,price})=>{
     )
 }
 const DIV = styled.div`
+.buyBtn{
+    z-index: 10;
+   /* border: #c3991c solid 2px;
+    background-color : #f10000; */
+    
+}
     .orangePrice{
     color: #ff8800;
     margin: 10px;
@@ -43,12 +49,14 @@ const DIV = styled.div`
     font-weight: 600;
 }
 .proDiv{
+    transform: 0.5s;
     width: 100%;
 }
 .imgContainer > img {
     border-radius: 40px;
     width: 100%;
     z-index: 1;
+    transition: 0.5s;
 }
 .proDiv > div{
     display: flex;
@@ -78,18 +86,18 @@ const DIV = styled.div`
     background-color: #950000 ;
 }
 .imgContainer{
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 20px;
     align-items: center;
 }
 .imgContainer > h2{
     padding: 10px;
-    border: 2px solid black;
+    border: 5px solid white;
     font-weight: 600;
     width: fit-content;
     margin: auto;
     align-content: center;
-    color: #000000;
+    color: white;
     background-color: transparent;
     margin-top: -90px;
     margin-bottom: 50px;
@@ -99,6 +107,7 @@ const DIV = styled.div`
 .active{
     /* visibility: hidden; */
     opacity:0.5;
+    transition: 0.5s;
     /* border: 1px solid black; */
 } 
 @media only screen and (max-width: 1024px) {
