@@ -14,6 +14,7 @@ import {
   ModalCloseButton,
 } from '@chakra-ui/react' 
 import axios from "axios"
+import { setLocalstorageData } from '../Api/LocalStorage'
 
 
 const CartPage = () => {
@@ -103,7 +104,6 @@ const handlequantity = (id, val) => {
     setPrice(price)
   }
 
-
   useEffect(() => {
     total()
   }, [total])
@@ -154,8 +154,7 @@ const onBuy=()=>{
                       >
 
                         <div
-                          className="bg-image hover-overlay hover-zoom ripple rounded"
-                          data-mdb-ripple-color="light"
+                          
                         >
                           <img src={item.image}
                             className="w-100"
@@ -267,7 +266,7 @@ const onBuy=()=>{
                 <div className="card-body"
                   style={{ display: "flex", flex: "column", gap: "5px" }}
                 >
-
+     
                   <img className="me-2" width="45px"
                     src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                     alt="Visa" />
@@ -322,26 +321,10 @@ const onBuy=()=>{
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
-
           </div>
       
-        </div>
-
-
-
-
-   
+        </div> 
       </section>
-
 
       <Modal
           onClose={onClose}

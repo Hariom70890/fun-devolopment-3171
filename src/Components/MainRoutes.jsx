@@ -34,8 +34,9 @@ export const MainRoutes = () =>{
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<SignupCard/>} />
             <Route path="/contact" element={<Contact/>} />
-
+            <Route path="/payment" element={<Payment />} />
             <Route path='/admin' element={<Admin/>}/>
+            <Route path='/payment' element={<Payment/>}/>
 
 
             <Route path="/cart" element={
@@ -49,10 +50,12 @@ export const MainRoutes = () =>{
             <Product/>
             
             }/>
-
-            <Route path="/payment" element={<Payment/>} />
-       
-            <Route path="/product/:id" element={<SingleProductPage/>} />
+            
+            <Route path="/product/:id" element={
+                // <PrivateRouting>
+            <SingleProductPage/>
+            // </PrivateRouting>
+            } />
 
 
            
