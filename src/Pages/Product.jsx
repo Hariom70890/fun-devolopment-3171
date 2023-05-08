@@ -10,9 +10,9 @@ import { Spinner, Text } from '@chakra-ui/react'
 import { Sidebar, passFun } from '../Components/Sidebar';
 import { useSearchParams ,useLocation, useParams} from 'react-router-dom'
 import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-library.add(faChevronLeft, faChevronRight);
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+// library.add(faChevronLeft, faChevronRight);
 
 
 export const Product = () => {
@@ -116,16 +116,16 @@ export const Product = () => {
     return <ProductCard key={ele.id} {...ele} />
     })
     }
-    <div className="pagination">
-    <Button isDisabled={+currentPage== 1} colorScheme='teal' onClick={handleDecrement}>Previous</Button>
-    <span className='center'>{currentPage}</span>
-    <Button colorScheme='teal' style={{width:"80px"}} onClick={handleIncrement}>Next</Button>
-    </div>
+    
     </div>
     
 )  }
 </div>
-
+<div className="pagination">
+    <Button isDisabled={+currentPage== 1} colorScheme='teal' onClick={handleDecrement}>Previous</Button>
+    <span className='center'>{currentPage}</span>
+    <Button colorScheme='teal' style={{width:"80px"}} onClick={handleIncrement}>Next</Button>
+    </div>
     </DIV>
 {isError && <h2>Something went wrong...!</h2>}
     </div>

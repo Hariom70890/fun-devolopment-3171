@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react' 
 import axios from "axios"
 
-const CartPage = () => {
+
 
 
 import { useDispatch } from 'react-redux';
