@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import "../Css/product.css"
 import { Button } from '@chakra-ui/react'
@@ -12,6 +13,7 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 library.add(faChevronLeft, faChevronRight);
+
 
 export const Product = () => {
   let getDataCategoryLS = getLocalstorageData("headingCat")
@@ -28,6 +30,7 @@ export const Product = () => {
     })
     const [order,setOrderData] = useState("");
     const [title,setTitle] = useState("");
+
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize, setPageSize] = useState(12);
 
@@ -51,26 +54,24 @@ export const Product = () => {
 
     const handleSortChange = (e) => {
       const value = e.target.value;
-    
-      if (value =="title_asc") {
-        setTitle("asc");
-        setOrderData("");
-      } else if (value =="title_desc") {
-        setTitle("desc");
-        setOrderData("");
-      } 
-      else if(value == "asc"){
-        setOrderData("asc");
-        setTitle("")
+
+      if (value == "title_asc") {
+         setTitle("asc");
+         setOrderData("");
+      } else if (value == "title_desc") {
+         setTitle("desc");
+         setOrderData("");
+      } else if (value == "asc") {
+         setOrderData("asc");
+         setTitle("");
+      } else if (value == "desc") {
+         setOrderData("desc");
+         setTitle("");
+      } else if (value == undefined) {
+         setOrderData(undefined);
+         setTitle(undefined);
       }
-      else if(value == "desc"){
-        setOrderData("desc");
-        setTitle("")
-      }
-      else if (value == undefined){
-        setOrderData(undefined);
-        setTitle(undefined)
-      }
+
     };
     const handleIncrement =()=>{
       setCurrentPage((pre)=>pre + 1);
@@ -86,26 +87,22 @@ export const Product = () => {
   return (
     <div className='side-bar'><Sidebar/>
     <DIV className='product-container'>
-    <Text className='text-male'  fontSize='35px' color='Black'>{
-      (getDataGenderLS ||"").charAt(0).toUpperCase()+(getDataGenderLS ||"").slice(1)
-      }</Text>
+
     <div className='total-sort-conatiner'>
-    <Text pt="5" pl="4" fontSize='25px' color='black'>
-  Total Product {product.length}
+    <Text fontSize='30px' color='black'>
+  Total Product :{product.length}
 </Text>
-<Text pt="5" className='text-cat' fontSize='30px' color='gray'>{
-  (getDataCategoryLS || "").charAt(0).toUpperCase()+(getDataCategoryLS ||"").slice(1)
-}</Text>
+
+    {/* <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text> */}
 <select id="sort" value={order} onChange={handleSortChange}>
     <option value="undefined">--Select a Option--</option>
 
-    <option value="asc">Low to High</option>
-    <option value="title_asc">Ascending</option>
-    <option value="title_desc">Descending</option>
-    <option value="desc">High to Low</option>
-
-</select>
-    </div>
+                  <option value="asc">Low to High</option>
+                  <option value="title_asc">Ascending</option>
+                  <option value="title_desc">Descending</option>
+                  <option value="desc">High to Low</option>
+               </select>
+            </div>
 
     <div className='loding-product'>{isLoading ? (<Spinner className='spinner'
   thickness='4px'
@@ -128,7 +125,7 @@ export const Product = () => {
     
 )  }
 </div>
-    
+
     </DIV>
 {isError && <h2>Something went wrong...!</h2>}
     </div>
@@ -137,6 +134,7 @@ export const Product = () => {
 
 
 const DIV = styled.div`
+
 width: 100%;
 .spinner{
   margin-left: 70vh;
@@ -158,5 +156,6 @@ width: 100%;
   margin-left: 5px;
   margin-right: 5px;
 }
+
 
 `;
