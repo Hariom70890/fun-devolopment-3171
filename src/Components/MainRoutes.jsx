@@ -11,7 +11,7 @@ import AdminDashboard from "../Pages/AdminDashboard";
 import Login from "../login/Login";
 import SignupCard from "../login/SignUp";
 import CartPage from "./CartPage";
-
+import Payment from "./Payment";
 import { AdminEditPage } from "../Pages/AdminEditPage";
 
 import PrivateRouting from "./PrivateRouting";
@@ -28,14 +28,29 @@ export const MainRoutes = () => {
          <Route path="/signup" element={<SignupCard />} />
          <Route path="/contact" element={<Contact />} />
 
-         <Route path="/admin" element={<Admin />} />
+         <Route path="/payment" element={<Payment />} />
 
          <Route path="/cart" element={<CartPage />} />
 
          <Route path="/shop" element={<Product />} />
          <Route path="/single/:id" element={<SingleProductPage />} />
 
-         <Route path="dashboard" element={<AdminDashboard />} />
+         <Route
+            path="/admin"
+            element={
+               <PrivateRouting>
+                  <Admin />
+               </PrivateRouting>
+            }
+         />
+         <Route
+            path="admindashboard"
+            element={
+              
+                  <AdminDashboard />
+               
+            }
+         />
          <Route path="edit/:id" element={<AdminEditPage />} />
          <Route path="/cart" element={<CartPage />} />
       </Routes>

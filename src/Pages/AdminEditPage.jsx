@@ -23,7 +23,7 @@ const navigate = useNavigate()
          })
          .then((res) => setData(res.data));
       setX(!x);
-      navigate('/dashboard')
+      navigate('/app')
    };
    const handleChange = (e) => {
       const {name,value} = e.target;
