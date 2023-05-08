@@ -14,9 +14,6 @@ import {
   ModalCloseButton,
 } from '@chakra-ui/react' 
 import axios from "axios"
-import { setLocalstorageData } from '../Api/LocalStorage'
-
-
 const CartPage = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
