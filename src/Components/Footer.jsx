@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, VStack, HStack, UnorderedList, ListItem, List, Input, Button, SimpleGrid } from '@chakra-ui/react'
+import {  Input, Button } from '@chakra-ui/react'
 import styled from 'styled-components';
 
 const Footer = () => {
@@ -72,6 +72,8 @@ const DIV = styled.div`
     height: 60px;
     border-radius: 20px;
     /* display: flex; */
+    width: fit-content;
+
   }
   .footerAbout{
     display: flex;
@@ -102,8 +104,10 @@ const DIV = styled.div`
     font-size: small;
   }
   .fDiv > img {
-    width: 50%;
-    border-radius: 20px;
+    /* height: 30px; */
+    height: 30px;
+    width: fit-content;
+    /* border-radius: 20px; */
   }
   .footerEmail{
     display: flex;

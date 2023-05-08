@@ -8,8 +8,21 @@ import {
   MDBInput,
   MDBRow,
 } from "mdb-react-ui-kit";
+import { useState } from "react";
 
-export default function App() {
+
+
+export default function Payment() {
+
+
+  const [cartNumber, setNumber] = useState("")
+
+  if(cartNumber.length%5 === 0){
+    setNumber(cartNumber+" ")
+    console.log(cartNumber);
+  }
+  console.log(cartNumber);
+
   return (
     <MDBContainer
       className="py-5"
@@ -33,39 +46,14 @@ export default function App() {
                   className="img-fluid"
                   src="https://img.icons8.com/color/48/000000/mastercard-logo.png"
                 />
-                <div className="flex-fill mx-3">
-                  <div className="form-outline">
-                    <MDBInput
-                      label="Card Number"
-                      id="form1"
-                      type="text"
-                      size="lg"
-                      maxLength={16}
-                    //   value="**** **** **** 3193"
-                    />
-                  </div>
-                </div>
-                <a href="#!">Remove card</a>
+                
               </div>
               <div className="d-flex flex-row align-items-center mb-4 pb-1">
                 <img
                   className="img-fluid"
                   src="https://img.icons8.com/color/48/000000/visa.png"
                 />
-                <div className="flex-fill mx-3">
-                  <div className="form-outline">
-                    <MDBInput
-                      label="Card Number"
-                      id="form2"
-                      type="text"
-                      size="lg"
-                      maxLength={16}
-                      typeof="password"
-                    //   value="**** **** **** 4296"
-                    />
-                  </div>
-                </div>
-                <a href="#!">Remove card</a>
+                
               </div>
               <p className="fw-bold mb-4">Add new card:</p>
               <MDBInput
