@@ -4,7 +4,7 @@ import styles from './admin.module.css'
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { AdminCard } from "../Components/AdminCard";
-import { Text } from "@chakra-ui/react";
+import { Text, position } from "@chakra-ui/react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 import { getProduct } from "../Api/action";
@@ -98,7 +98,7 @@ function App() {
             <div className={styles.middleContainer}>
                <div className={styles.buttonContainer}>
                  
-                     <button style={{margin:"100 0px"}} onClick={handleAdd}>Add Products</button>
+                     <button className={styles.btnsnm} onClick={handleAdd}>Add Products</button>
                  
 
                      <div className={`${styles.updateProduct} ${styles.AddEmployee}`}>
@@ -125,7 +125,7 @@ function App() {
                         placeholder="Employee Department"
                         id="addEmployeeDepartment"
                      />
-                     <button >Add Employee</button>
+                     <button className={styles.btnsnm}  >Add Employee</button>
                      <div>
                         <hr />
                      </div>
@@ -142,7 +142,7 @@ function App() {
                         id="updateEmployeeSalary_salary"
                         placeholder="Employee Salary"
                      />
-                     <button>Update Salary</button>
+                     <button className={styles.btnsnm} >Update Salary</button>
                      <div>
                         <hr />
                      </div>
