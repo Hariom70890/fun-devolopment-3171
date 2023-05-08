@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link, Route, Routes} from 'react-router-dom';
+import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 import {
   Input,
     Button,
@@ -16,13 +16,14 @@ import {
 } from '@chakra-ui/react' 
 import axios from "axios"
 
+
+
+
+
+
+
 const CartPage = () => {
-
-
-import { useDispatch } from 'react-redux';
-
-const CartPage = () => {
-   const dispatch=useDispatch()
+  
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [scrollBehavior, setScrollBehavior] = React.useState('inside')
 
@@ -40,6 +41,9 @@ const CartPage = () => {
   const[landmark, setlandmark] = useState("")
   const[gstin, setgstin] = useState("")
 
+
+  const nav=useNavigate()
+
   const HandleSubmit =(e)=>{
     e.preventDefault()
     if(name!=="" && mobile!=="" && email!=="" 
@@ -49,7 +53,7 @@ const CartPage = () => {
     ){
       setaddress({name, mobile, email, pin, city, state, country, building, area, landmark, gstin})
       alert("Added all the details")
-     
+     nav("/payment")
 
      
     }
@@ -103,6 +107,7 @@ const handlequantity = (id, val) => {
     let filteredData = Data.filter((el) => el.id === id ? el.quantity += val : el)
     //  console.log(filteredData)
     setData(filteredData)
+    console.log("hari")
   }
 
 
@@ -193,7 +198,8 @@ const handlequantity = (id, val) => {
                         className="col-lg-3 col-md-12 mb-4 mb-lg-0"
                       >
 
-                        <div
+                        <div className="bg-image hover-overlay hover-zoom ripple rounded"
+                          data-mdb-ripple-color="light"
                           
                         >
                           <img src={item.image}
@@ -253,6 +259,7 @@ const handlequantity = (id, val) => {
 
                           <button className="btn btn-primary px-3 ms-2"
                             onClick={() => handlequantity(item.id, 1)}
+
 
 
                           >
@@ -410,9 +417,7 @@ const handlequantity = (id, val) => {
         <Button type="submit" >ADD ADDRESS</Button>
         
        
-        <Link to="/payment"   >
-       <Button >Payment</Button>
-      </Link>
+       
 
    
             

@@ -15,7 +15,8 @@ import CartPage from "./CartPage"
 
 // import CartPage from "./CartPage"
 import SingleProductPage from "../Pages/SingleProductPage"
-// import PaymentPage from "../Pages/PaymentPage"
+import Payment from "../Pages/Payment"
+
 
 
 
@@ -33,7 +34,7 @@ export const MainRoutes = () =>{
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<SignupCard/>} />
             <Route path="/contact" element={<Contact/>} />
-            {/* <Route path="/payment" element={<Payment />} /> */}
+            <Route path="/payment" element={<Payment />} />
             <Route path='/admin' element={<Admin/>}/>
 
             <Route path="/cart" element={
