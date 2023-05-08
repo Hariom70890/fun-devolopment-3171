@@ -11,10 +11,7 @@ import AdminDashboard from '../Pages/AdminDashboard'
 import Login from "../login/Login"
 import SignupCard from "../login/SignUp"
 import CartPage from "./CartPage"
-import Payment from "./Payment"
 // import CartPage from "./CartPage"
-
-import PrivateRouting from "./PrivateRouting"
 import SingleProductPage from "../Pages/SingleProductPage"
 // import PaymentPage from "../Pages/PaymentPage"
 
@@ -34,11 +31,8 @@ export const MainRoutes = () =>{
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<SignupCard/>} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/payment" element={<Payment />} />
+            {/* <Route path="/payment" element={<Payment />} /> */}
             <Route path='/admin' element={<Admin/>}/>
-            <Route path='/payment' element={<Payment/>}/>
-
-
             <Route path="/cart" element={
             
             <CartPage/>
