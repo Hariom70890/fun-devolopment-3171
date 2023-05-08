@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
    name: "",
@@ -15,7 +16,7 @@ const initialState = {
 function Admin() {
    const [product, setProduct] = useState(initialState);
    const { name, image, desc, price, category, gender, color } = product;
-
+const navigate = useNavigate()
    const handleChange = (e) => {
       const { name, value } = e.target;
       setProduct((prev) => {
@@ -27,22 +28,23 @@ function Admin() {
       e.preventDefault();
 
       axios
-         //  .post(`https://json-example.onrender.com/products`, product)
-         .post(`http://localhost:8080/product`)
+          .post(`https://json-example.onrender.com/products`, product)
+         // .post(`http://localhost:8080/product`)
          .then((res) => console.log(res.data));
       console.log(product);
       alert("Item has been added");
+      navigate('/app')
    };
    return (
       <DIV>
          <form onSubmit={handleSubmit}>
-            <h1 style={{ fontFamily:"Brush Script MT"}}>Add Product</h1>
+            <h1 style={{ fontFamily: "Brush Script MT" }}>Add Product</h1>
 
             <input
                required
                type="text"
-               value={name}
-               name="name"
+               // value={name}
+               name="title"
                placeholder="Product Name"
                onChange={(e) => handleChange(e)}
             />

@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 
 const PrivateRouting = ({children}) => {
 const auth=useSelector((store)=>store.AuthReducer.isAuth)
-
+console.log(auth)
 if(!auth){
     return <Navigate to="/login" />
 }
