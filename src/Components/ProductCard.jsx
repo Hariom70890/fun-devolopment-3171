@@ -31,22 +31,7 @@ export const ProductCard = ({
       price,
       title,
    };
-   const randomColor = () => {
-      const color1 = Math.floor(Math.random() * 256);
-      const color2 = Math.floor(Math.random() * 108);
-      const color3 = Math.floor(Math.random() * 256);
-      return `rgb(${color1}, ${color2}, ${color3})`;
-   };
-
-   const defaultColor = randomColor();
-   const randomColor2 = () => {
-      const color1 = Math.floor(Math.random() * 256);
-      const color2 = Math.floor(Math.random() * 108);
-      const color3 = Math.floor(Math.random() * 300);
-      return `rgb(${color1}, ${color2}, ${color3})`;
-   };
-
-   const defaultColor2 = randomColor2();
+   
 
    const handleCartPage = () => {
       checkingDataInCart().then((res) => {

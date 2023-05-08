@@ -22,8 +22,14 @@
     height: 34px;
 }
 
+
 @media all and (min-width: 451px) and (max-width: 750px) {
     
+    .filter-div{
+        display: none;
+        white-space: nowrap;
+        
+    }
     
   }
   /* Small screens */

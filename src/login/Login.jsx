@@ -57,19 +57,13 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
     const [state,dispatch]=useReducer(reducer,initialState)
     const auth=useSelector((store)=>store.AuthReducer.isAuth)
     const adminAuth=useSelector((store)=>store.AuthReducer.adminAuth)
-    
-
-   
-   
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://v6dej6.sse.codesandbox.io/user`);
+      const response = await axios.get(`https://json-example.onrender.com/user`);
       const users = response.data;
-      
       const user = users.find((u) => u.email === state.email && u.password === state.password&&u.email!="admin"&&u.password!="admin");
       const admin=users.find((u)=>u.email=="admin"&&u.password=="admin")
-      
 
       if(admin){
         dispatchh(AdminSuccess(true))
@@ -93,10 +87,8 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
       console.log(error);
     }
   }
-  
   const handleLogin = () => {
     fetchData();
- 
   }
 if(auth){
   console.log("User Login Successful")
@@ -104,7 +96,7 @@ if(auth){
 }
 if(adminAuth){
   alert('Admin Login Successful')
-  return <Navigate to="/dashboard" />
+  return <Navigate to="/admindashboard" />
 }
     return (
       <Flex
@@ -112,8 +104,7 @@ if(adminAuth){
         align={'center'}
         justify={'center'}
         // bg={useColorModeValue('gray.50', 'gray.800')}
-        >
-          
+        >  
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
           <Box height={"5"}></Box>

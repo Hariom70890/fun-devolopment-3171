@@ -1,158 +1,161 @@
-// import React, { useEffect, useState } from 'react'
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getProduct } from '../Api/action';
-// import { grid } from '@chakra-ui/styled-system';
-// import styled from 'styled-components';
-// import {AdminCard} from '../Components/AdminCard'
-// const AdminDashboard = () => {
-    
-//     const {product,isError,isLoading} = useSelector((store)=>{
-//         return {
-//             product : store.productReducer.products,
-//             isLoading : store.productReducer.isLoading,
-//             isError : store.productReducer.isError,
-//         }
-//     })
-//     const dispatch = useDispatch();
+import React, { useEffect, useState } from "react";
+// import "./Admin.css";
+import styles from './admin.module.css'
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { AdminCard } from "../Components/AdminCard";
+import { Text } from "@chakra-ui/react";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
-//     useEffect(()=>{
-//         dispatch(getProduct())
-//     },[])
-//     console.log(product)
-//   return (
-//     <DIV>
-//     <div className='product-card'>
-// <h1>hello</h1>
-//      {product.map((ele)=>{
-//     return <AdminCard key={ele.id} {...ele} x= "true" />
-//     })
-//     }
-//     </div>
+import { getProduct } from "../Api/action";
+function App() {
+   // const [product, setProduct] = useState([]);
+   const [employee, setEmployee] = useState([]);
+   const [users, setUsers] = useState([]);
+   const [orders, setOrders] = useState([]);
+   const [totalIncome, setTotalIncome] = useState(0);
+   const location = useLocation();
+   const dispatch = useDispatch();
+   const [searchParams, setSearchParams] = useSearchParams();
+   const { product } = useSelector((store) => {
+      return {
+         product: store.productReducer.products,
+      };
+   });
+   const paramObj = {
+      params: {
+         category: searchParams.getAll("category"),
+         gender: searchParams.getAll("gender"),
+         color: searchParams.getAll("color"),
+         // _sort:searchParams.get("order") && "price",
+         // _order:searchParams.get("order")
+      },
+   };
 
-//     </DIV>
-//   )
-// }
+   useEffect(() => {
+      dispatch(getProduct(paramObj));
+   }, [location.search]);
 
-// export default AdminDashboard
+   const navigate = useNavigate();
+   const handleAdd = () => {
+      alert("Heloo");
 
+      navigate("/admin");
+   };
 
-// const DIV = styled.div`
-// /* border: 5px solid ; */
-// width: 100%;
-// .product-card{
-//     display: grid;
-//   grid-template-columns: repeat(4,1fr);
-//   gap: 2rem;
-// }
-// `
+   function showOptions() {
+      alert("Hello");
+   }
 
+   // setX(Math.random());
 
-import React, { useEffect, useState } from 'react'
-import "../Css/product.css"
-import { useDispatch, useSelector, } from 'react-redux'
-import { getProduct } from '../Api/action'
-import { ProductCard } from '../Components/ProductCard'
-import styled from '@emotion/styled';
-import { Spinner, Text } from '@chakra-ui/react'
-import { Stack} from '@chakra-ui/react'
-import { Sidebar, passFun } from '../Components/Sidebar';
-import { useSearchParams ,useLocation, useParams} from 'react-router-dom'
-import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage'
-import { auto } from '@popperjs/core'
-import { AdminCard } from '../Components/AdminCard'
+   return (
+      <>
+         <br />
+         <br />
+         <br />
+         <br />
 
- const AdminDashboard = () => {
-  let getDataCategoryLS = getLocalstorageData("headingCat")
-  let getDataGenderLS = getLocalstorageData("headingGen")
-  const dispatch = useDispatch();
-  const [searchParams,setSearchParams] =  useSearchParams();
-  const location = useLocation()
-    const {product,isError,isLoading} = useSelector((store)=>{
-        return {
-            product : store.productReducer.products,
-            isLoading : store.productReducer.isLoading,
-            isError : store.productReducer.isError,
-        }
-    })
-    const initialSort = searchParams.get("price")
-    // const initialSortAlp = searchParams.get("title")
-    const [order,setOrderData] = useState(initialSort || "");
+         <nav>
+            <h1>Hey! Admin Welcome</h1>
+         </nav>
+         <br />
+         <Text fontSize="30px" color="black">
+            Total Product :{product.length}
+         </Text>
+         <div className={styles.main_container}>
+            <div className={styles.Boxes}>
+               <div
+                  className={styles.smallBoxes}
+                  style={{ backgroundColor: "rgb(244, 135, 222)" }}
+               >
+                  <h2 id="ordreTotal">33</h2>
+                  <p>Total Orders</p>
+               </div>
+               <div
+                  className={styles.smallBoxes}
+                  style={{ backgroundColor: "rgb(93, 162, 241)" }}
+               >
+                  <h2 id="userTotal">8</h2>
+                  <p>Total Registered Users</p>
+               </div>
+               <div
+                  className={styles.smallBoxes}
+                  style={{ backgroundColor: "rgb(226, 159, 71)" }}
+               >
+                  <h2 id="incomeemployees">102</h2>
+                  <p>Total Employees</p>
+               </div>
+               <div
+                  className={styles.smallBoxes}
+                  style={{ backgroundColor: "rgb(136, 234, 94)" }}
+               >
+                  <h2 id={styles.incomeTotal}>122344</h2>
+                  <p>Total Income</p>
+               </div>
+            </div>
+            <h2 className={styles.notification}></h2>
+            <div className={styles.middleContainer}>
+               <div className={styles.buttonContainer}>
+                 
+                     <button style={{margin:"100 0px"}} onClick={handleAdd}>Add Products</button>
+                 
 
-
-    const paramObj = {
-      params:{
-        category:searchParams.getAll("category"),
-        gender : searchParams.getAll("gender"),
-        color : searchParams.getAll("color"),
-        // _sort:searchParams.get("order") && "price",
-        // _order:searchParams.get("order")
-      }
-    }
-
-    useEffect(()=>{
-        dispatch(getProduct(paramObj))
-    },[location.search])
-
-  //  console.table(product)
-const handleSortChange = (e)=>{
- const {value} = e.target
- setOrderData(value)
-//  console.log(value)
+                     <div className={`${styles.updateProduct} ${styles.AddEmployee}`}>
+                     <h1 id="update_details">Add Employee</h1>
+                     {/* <!-- <input type="text" id="addEmployeeid" placeholder="Employee Id"> --> */}
+                     <input
+                        type="text"
+                        placeholder="Employee Name"
+                        id="addEmployeeName"
+                     />
+                     <input
+                        type="text"
+                        placeholder="Employee ImageUrl"
+                        value="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg"
+                        id="addEmployeeImage"
+                     />
+                     <input
+                        type="number"
+                        placeholder="Employee Salary"
+                        id="addEmployeeSalary"
+                     />
+                     <input
+                        type="text"
+                        placeholder="Employee Department"
+                        id="addEmployeeDepartment"
+                     />
+                     <button >Add Employee</button>
+                     <div>
+                        <hr />
+                     </div>
+                  </div>
+                  <div className={`${styles.updateProduct} ${styles.updateEmployeeSalary}`}>
+                     <h1 id={styles.updateDetails}>Update Salary</h1>
+                     <input
+                        type="text"
+                        id="updateEmployeeSalary_Id"
+                        placeholder="Employee Id"
+                     />
+                     <input
+                        type="number"
+                        id="updateEmployeeSalary_salary"
+                        placeholder="Employee Salary"
+                     />
+                     <button>Update Salary</button>
+                     <div>
+                        <hr />
+                     </div>
+                  </div>
+               </div>
+               <div className={styles.cardContainer}>
+                  {product.reverse().map((e) => {
+                     return <AdminCard key={e.id} {...e} />;
+                  })}
+               </div>
+            </div>
+         </div>
+      </>
+   );
 }
-// console.log(sortdata)
-// console.log(product.length)
-// setLocalstorageData("total",product.length)
-//  const GenderforDisplay = getDataGenderLS.charAt(0).toUpperCase() + getDataGenderLS.slice(1);
-//  getDataCategoryLS = getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1);
-
-  return (
-    <div className='side-bar'><Sidebar/>
-    <DIV className='product-container'>
-    <Text className='text-male' fontSize='40px' color='black'>{""}</Text>
-    <div className='total-sort-conatiner'>
-    <Text fontSize='30px' color='black'>
-  Total Product :{product.length}
-</Text>
-    <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text>
-<select id="sort" onChange={handleSortChange}>
-    <option value="">--Sort by Price--</option>
-    <option value="asc">Low to High</option>
-    {/* <option value="asc">Ascending</option>
-    <option value="desc">Descending</option> */}
-    <option value="desc">High to Low</option>
-
-</select>
-    </div>
-
-    <div className='loding-product'>{isLoading ? (<Spinner className='spinner'
-  thickness='4px'
-  speed='0.65s'
-  emptyColor='gray.200'
-  color='blue.500'
-  size='xl'
-/>) :(
-   <div className='product-card'>
-    {product?.map((ele)=>{
-    return <AdminCard key={ele.id} {...ele} x={true} />
-    })
-    }
-    </div>
-)  }
-</div>
-    </DIV>
-{isError && <h2>Something went wrong...!</h2>}
-    </div>
-  )
-}
-
-export default AdminDashboard
-
-
-const DIV = styled.div`
-width: 100%;
-.spinner{
-  margin-left: 70vh;
- margin-top: 20vh;
-}
-
-`;
+export default App;

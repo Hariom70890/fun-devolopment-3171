@@ -16,8 +16,10 @@ import {
 } from '@chakra-ui/react' 
 import axios from "axios"
 
-import { useDispatch } from 'react-redux';
+const CartPage = () => {
 
+
+import { useDispatch } from 'react-redux';
 
 const CartPage = () => {
    const dispatch=useDispatch()
@@ -119,7 +121,6 @@ const handlequantity = (id, val) => {
   
   }
 
-
   useEffect(() => {
     total()
   }, [total])
@@ -193,8 +194,7 @@ const handlequantity = (id, val) => {
                       >
 
                         <div
-                          className="bg-image hover-overlay hover-zoom ripple rounded"
-                          data-mdb-ripple-color="light"
+                          
                         >
                           <img src={item.image}
                             className="w-100"
@@ -306,7 +306,7 @@ const handlequantity = (id, val) => {
                 <div className="card-body"
                   style={{ display: "flex", flex: "column", gap: "5px" }}
                 >
-
+     
                   <img className="me-2" width="45px"
                     src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                     alt="Visa" />
@@ -370,26 +370,10 @@ const handlequantity = (id, val) => {
                           <i className="fas fa-trash"></i>
                         </button>
             </div>
-
-
-
-
-
-
-
-
-
-
           </div>
       
-        </div>
-
-
-
-
-   
+        </div> 
       </section>
-
 
       <Modal
           onClose={onClose}

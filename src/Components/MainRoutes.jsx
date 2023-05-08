@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom"
 
 import { Home } from "../Pages/Home"
@@ -13,8 +14,6 @@ import SignupCard from "../login/SignUp"
 import CartPage from "./CartPage"
 
 // import CartPage from "./CartPage"
-
-import PrivateRouting from "./PrivateRouting"
 import SingleProductPage from "../Pages/SingleProductPage"
 // import PaymentPage from "../Pages/PaymentPage"
 
@@ -34,9 +33,8 @@ export const MainRoutes = () =>{
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<SignupCard/>} />
             <Route path="/contact" element={<Contact/>} />
-
+            {/* <Route path="/payment" element={<Payment />} /> */}
             <Route path='/admin' element={<Admin/>}/>
-          
 
             <Route path="/cart" element={
             
@@ -50,12 +48,14 @@ export const MainRoutes = () =>{
             
             }/>
 
-        
-       
-            <Route path="/product/:id" element={<SingleProductPage/>} />
+            
+            <Route path="/product/:id" element={
+                // <PrivateRouting>
+            <SingleProductPage/>
+            // </PrivateRouting>
+            } />
 
-
-           
+  
             <Route path='/dashboard' element={<AdminDashboard/>}/>
 
             <Route path='/cart' element={<CartPage/>}/>
