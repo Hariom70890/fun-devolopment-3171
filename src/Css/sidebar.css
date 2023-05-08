@@ -21,3 +21,17 @@
     width: 28px;
     height: 34px;
 }
+
+@media all and (min-width: 451px) and (max-width: 750px) {
+    
+    
+  }
+  /* Small screens */
+  @media all and (min-width: 100px) and (max-width: 450px) {
+  
+    .sidebar-container{
+        display: none;
+
+    }
+    
+  }

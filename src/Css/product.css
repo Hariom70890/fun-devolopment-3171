@@ -20,7 +20,7 @@
   }
  .text-male{
     position: absolute;
-    margin-left: 42%;
+    margin-left: 41%;
  }
  .product-card{
     display: grid;
@@ -41,9 +41,13 @@
   @media all and (min-width: 100px) and (max-width: 450px) {
   
     .product-card{
+      margin-top: 100px;
         /* border: 2px solid red; */
         display: grid;
       grid-template-columns: repeat(1,1fr);
+    }
+    .total-sort-conatiner{
+      display: none;
     }
   }
   
