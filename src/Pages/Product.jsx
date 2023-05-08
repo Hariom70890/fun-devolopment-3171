@@ -10,10 +10,6 @@ import { Spinner, Text } from '@chakra-ui/react'
 import { Sidebar, passFun } from '../Components/Sidebar';
 import { useSearchParams ,useLocation, useParams} from 'react-router-dom'
 import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage'
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-// library.add(faChevronLeft, faChevronRight);
-
 
 export const Product = () => {
   let getDataCategoryLS = getLocalstorageData("headingCat")
