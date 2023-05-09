@@ -48,7 +48,7 @@ export const ProductCard = ({
    };
    return (
       <DIV className="container">
-         <img src={image} alt={title} />
+         <img  src={image} alt={title} />
          {/* <div className='flex'> */}
          <h3 style={{ fontSize: "15px", fontWeight: 600 }}>{title}</h3>
          {/* </div> */}
