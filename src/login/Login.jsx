@@ -60,7 +60,7 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://json-example.onrender.com/user`);
+      const response = await axios.get(`https://json-example.onrender.com/user`)
       const users = response.data;
       const user = users.find((u) => u.email === state.email && u.password === state.password&&u.email!="admin"&&u.password!="admin");
       const admin=users.find((u)=>u.email=="admin"&&u.password=="admin")
