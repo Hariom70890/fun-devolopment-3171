@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios"
 import {
   MDBBtn,
   MDBCard,
@@ -14,12 +15,22 @@ import { getLocalstorageData } from "../Api/LocalStorage";
 
 export default function Payment() {
 
+
+
+
+
+
+
+
+
     const navigate=useNavigate()
 
 
     const paymentdone=()=>{
         alert("order successful")
         navigate("/shop")
+        handledeleteAll()
+
     }
 
 
@@ -27,6 +38,112 @@ export default function Payment() {
     let ans = Math.floor(Math.random()*9000)+1000;
     alert(`Your OTP for Payment is :- ${ans}`)
   }
+
+
+
+
+
+  const [Data, setData] = useState([])
+
+  // console.log("Data", Data)
+
+
+  const handleadd = () => {
+    axios.get(`https://json-example.onrender.com/cart`).then((res) => {
+      //console.log("res",res.data)
+      let updateddata = res.data.map((el) => ({ ...el, quantity: 1 }))
+      //  console.log("ooo",updateddata)
+      setData(updateddata)
+    })
+  }
+
+
+  
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const [price, setPrice] = useState(0)
+  
+  // console.log("price", price)
+
+  const total = () => {
+    let price = 0;
+    Data.map((item) => (price += item.price * item.quantity)
+    )
+    setPrice(price)
+  
+  }
+
+  useEffect(() => {
+    total()
+  }, [total])
+
+
+
+
+
+  useEffect(() => {
+    handleadd()
+    catchid()
+  }, [])
+
+
+
+
+   
+   const [idd,setidd]=useState([])
+   const catchid = () => {
+    axios.get(`https://json-example.onrender.com/cart`).then((res) => {
+      //console.log("res",res.data)
+      let iddata = res.data.map((el) => (el.id))
+      //  console.log("ooo",updateddata)
+      setidd(iddata)
+    })
+  }
+  
+  console.log("idd",idd)
+
+
+  const handledeleteAll = () => {
+    for(let i=0;i<idd.length;i++){
+      axios.delete(`https://json-example.onrender.com/cart/${idd[i]}`).then(() => {
+        handleadd()
+    })
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div style={{paddingTop:"40px"}}>
