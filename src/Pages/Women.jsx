@@ -12,7 +12,7 @@ export const Women = ( ) =>{
     const [isLoading,setIsLoading] = useState(null)
     const getMenFunction=()=>{
       setIsLoading(true)
-      axios.get(`https://v6dej6.sse.codesandbox.io/products`)
+      axios.get(`https://json-example.onrender.com/products`)
       .then((res)=>{
         const upDatedFemaleData = res.data.filter((ele)=> ele.gender == "female");
         setFemale(upDatedFemaleData)

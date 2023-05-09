@@ -66,7 +66,7 @@ export default function SignupCard() {
 
   const handleSubmit=()=>{
     console.log(state)
-   axios.post(`https://v6dej6.sse.codesandbox.io/user`,state)
+   axios.post(`https://json-example.onrender.com/user`,state)
    
   }
 

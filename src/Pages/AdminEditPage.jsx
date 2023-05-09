@@ -23,7 +23,7 @@ const navigate = useNavigate()
          })
          .then((res) => setData(res.data));
       setX(!x);
-      navigate('/app')
+      navigate('/admindashboard')
    };
    const handleChange = (e) => {
       const {name,value} = e.target;
@@ -40,6 +40,8 @@ const navigate = useNavigate()
    // console.log(data);
 
    return (
+      <div style={{background:"#90CAF9", width:"80%", margin:"auto"}}>
+
       <DIV>
       
          <h1 style={{margin:60}}>You are editing product with ID: {id} </h1>
@@ -54,13 +56,16 @@ const navigate = useNavigate()
          <input style={{padding:"50px 20px"}} type="text" name="image" placeholder="Update the URL of the Image" onChange={ handleChange} />
          <button onClick={() => handleUpdate()}>Update the data</button>
       </DIV>
+      </div>
    );
 };
 
 const DIV = styled.div`
-   width: 400px;
-   padding: 20px;
+   width: 50%;
+   background:#BDBDBD;
+   padding: 20px 40px;
    margin: auto;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
    ${'' /* top-margin:200px; */}
    display: flex;
    flex-direction: column;

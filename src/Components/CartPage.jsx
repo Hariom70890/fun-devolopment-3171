@@ -22,6 +22,7 @@ import axios from "axios"
 
 
 
+
 const CartPage = () => {
   
   const { isOpen, onOpen, onClose } = useDisclosure()

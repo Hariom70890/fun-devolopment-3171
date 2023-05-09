@@ -57,13 +57,14 @@ import { getLocalstorageData, setLocalstorageData } from '../Api/LocalStorage';
     const [state,dispatch]=useReducer(reducer,initialState)
     const auth=useSelector((store)=>store.AuthReducer.isAuth)
     const adminAuth=useSelector((store)=>store.AuthReducer.adminAuth)
-
+console.log(state)
   const fetchData = async () => {
     try {
       const response = await axios.get(`https://json-example.onrender.com/user`)
       const users = response.data;
+      
       const user = users.find((u) => u.email === state.email && u.password === state.password&&u.email!="admin"&&u.password!="admin");
-      const admin=users.find((u)=>u.email=="admin"&&u.password=="admin")
+      const admin=users.find((u)=>u.email=="admin@gmail.com"&&u.password=="admin")
 
       if(admin){
         dispatchh(AdminSuccess(true))
