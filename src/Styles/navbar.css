@@ -82,6 +82,20 @@ nav{
 	/* padding: -5px; */
 }
 
+.beforeSearch{
+	border-radius: 10px;
+	width: 0px;
+	font-size: small;
+	padding:  10px;
+	visibility: hidden;
+	transition: 0.4s;
+}
+.navSearch{
+	visibility: visible;
+	width: 200px;
+	transition: 0.5s;
+}
+
 @media only screen and (max-width: 1024px) {
 	.logo{
 		height: 30px;
