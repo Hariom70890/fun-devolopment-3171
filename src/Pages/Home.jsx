@@ -98,7 +98,6 @@ export const Home = () => {
 
 const DIV = styled.div`
    /* margin-top: 60px; */
-   background-color: #f2f2f2;
    padding: 20px;
    padding-top: 80px;
    margin: 0;

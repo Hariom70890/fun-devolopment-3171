@@ -2,116 +2,106 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Center } from "@chakra-ui/layout";
+import { title } from "process";
+
 const initialState = {
-   name: "",
-   desc: "",
-   price: "",
-   color: "",
+   fullName: "",
+   address: "",
+   age: "",
    gender: "",
-   category: "",
+   role: "",
+   salary: "",
    image: "",
 };
 
-function Admin() {
-   const [product, setProduct] = useState(initialState);
-   const { name, image, desc, price, category, gender, color } = product;
+function AddEmployee() {
+   const [employee, setEmployee] = useState(initialState);
+   const { fullName, image, address, age, salary, gender, role } = employee;
 const navigate = useNavigate()
    const handleChange = (e) => {
       const { name, value } = e.target;
-      setProduct((prev) => {
-         return { ...prev, [name]: name === "price" ? +value : value };
+      setEmployee((prev) => {
+         return { ...prev, [name]: name === "age" || "salary" ? +value : value };
       });
+      console.log(employee)
    };
 
    const handleSubmit = (e) => {
       e.preventDefault();
 
       axios
-          .post(`https://json-example.onrender.com/products`, product)
-         // .post(`http://localhost:8080/product`)
+          .post(`https://json-example.onrender.com/employees`, employee)
          .then((res) => console.log(res.data));
-      console.log(product);
-      alert("Item has been added");
-      navigate('/app')
+      console.log(employee);
+      toast("New Employee has been added");
+      navigate('/admindashboard')
    };
    return (
       <DIV>
          <form onSubmit={handleSubmit}>
-            <h1 style={{ fontFamily: "Brush Script MT" }}>Add Product</h1>
+            <h1 style={{ fontFamily: "Brush Script MT", textAlign:"center" }}>Add a New Employee to Your Company</h1>
 
             <input
                required
                type="text"
-               // value={name}
-               name="title"
-               placeholder="Product Name"
+               value={fullName}
+               name="name"
+               placeholder="Employee Name"
                onChange={(e) => handleChange(e)}
             />
 
             <input
                required
                value={image}
-               type="text"
+            type="text"
                onChange={(e) => handleChange(e)}
                name="image"
-               placeholder="Product Image"
+               placeholder="Employee Image"
             />
 
             <input
                required
                onChange={(e) => handleChange(e)}
                type="text"
-               value={desc}
-               name="desc"
-               placeholder="Product description"
+               value={address}
+               name="Employee Address"
+               placeholder="Employee address"
             />
 
             <input
                required
                onChange={(e) => handleChange(e)}
                type="number"
-               name="price"
-               value={price}
-               placeholder="Product Price"
+               name="age"
+               value={age}
+               placeholder="Employee age"
             />
-
+<input  
+               required
+               value={salary}
+               onChange={(e) => handleChange(e)}
+               name="salary"
+               type="number"
+placeholder="Employee Salary (LPA)"
+/>
             <select
                required
-               value={category}
+               value={role}
                onChange={(e) => handleChange(e)}
-               name="category"
+               name="role"
                className="select-tags"
             >
-               <option value="">Select Category</option>
-               <option value="shirt">Shirt</option>
-               <option value="jeans">Jeans</option>
-               <option value="sarees">Sarees</option>
-               <option value="kurtas">Kurtas</option>
-               <option value="shoes">Shoes</option>
-               <option value="sandals">Sandals</option>
+               <option value="">Select Employee role</option>
+
+              <option value="Full-stack Developer">Full-stack Developer</option>
+              <option value="Front-End Developer">Front-End Developer</option>
+              <option value="Back-End Developer">Back-End Developer</option>
             </select>
 
             <select
-               required
-               value={color}
-               onChange={(e) => handleChange(e)}
-               name="color"
-               className="select-tags"
-            >
-               <option value="">Select Color</option>
-
-               <option value="blue">Blue</option>
-               <option value="white">White</option>
-               <option value="black">Black</option>
-               <option value="gray">Gray</option>
-               <option value="maroon">Maroon</option>
-               <option value="pink">Pink</option>
-               <option value="olive">Olive</option>
-               <option value="multi">Multi</option>
-            </select>
-
-            <select
-               value={gender}
+               
                required
                onChange={(e) => handleChange(e)}
                name="gender"
@@ -122,13 +112,13 @@ const navigate = useNavigate()
                <option value="female">Female</option>
                {/* <option value="unisex">Unisex</option> */}
             </select>
-            <button type="submit">Add Product</button>
+            <button type="submit">Add Employee</button>
          </form>
       </DIV>
    );
 }
 
-export default Admin;
+export default AddEmployee;
 
 const DIV = styled.div`
    width: 70%;
@@ -154,7 +144,7 @@ const DIV = styled.div`
       padding: 50px 0px;
       align-items: center;
       justify-content: center;
-      color: black;
+      role: black;
       background:white
    }
    input,
@@ -165,7 +155,7 @@ const DIV = styled.div`
       border-radius: 5px;
       border: 1px solid black;
       padding: 10px;
-      color: black;
+      role: black;
    }
 
    button {
@@ -173,8 +163,8 @@ const DIV = styled.div`
       width: 40%;
       height: 48px;
       font-size: large;
-      color: white;
-      background-color: green;
+      role: white;
+      background-role: green;
       border-radius: 25px;
    }
 `;

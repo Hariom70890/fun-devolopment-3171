@@ -80,10 +80,10 @@ setLocalstorageData("headingGen",headingGen)
     <div className='sidebar-container' >
         <div className='filter-div' id="refined" >
         <img src={filterIcon}/>
-        <Text className='filter-div' fontSize='30px' color='black'> Refined By</Text>  {/* <FcFilledFilter />  */}
+        <Text className='filter-div' fontSize='30px' > Refined By</Text>  {/* <FcFilledFilter />  */}
         </div>
       <div className='category-gender'>
-      <Text fontSize='25px' color='black'> Gender</Text>
+      <Text fontSize='25px' > Gender</Text>
 
       <div className='checkbox'>
       <Checkbox  value={"male"} onChange={handleGenderChange} checked={gender.includes("male")} >Male</Checkbox>
@@ -92,7 +92,7 @@ setLocalstorageData("headingGen",headingGen)
       <br/>
       <br/>
        </div>
-      <Text fontSize='25px' color='black'>Category</Text>
+      <Text fontSize='25px' >Category</Text>
 
       <div className='checkbox'>
       <Checkbox  value={"shirt"} onChange={handleCategoryChange} checked={category.includes("shirt")} >Shirt</Checkbox>
@@ -109,7 +109,7 @@ setLocalstorageData("headingGen",headingGen)
       </div>
       <br/>
       
-      <Text fontSize='25px' color='black'>Color</Text>
+      <Text fontSize='25px'>Color</Text>
       <div className='checkbox'>
       <Checkbox  value={"Blue"} onChange={handleColorChange} checked={category.includes("Blue")} >Blue</Checkbox>
       <br/>

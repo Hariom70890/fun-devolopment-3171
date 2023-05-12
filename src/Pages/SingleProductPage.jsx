@@ -23,6 +23,7 @@ import { useEffect, useState } from 'react';
   import { MdLocalShipping } from 'react-icons/md';
 import { useParams } from 'react-router';
 import { postRequestForCart } from '../Api/action';
+import { toast } from 'react-toastify';
   
   export default function SingleProductPage() {
     const [data,setData]=useState({})
@@ -36,7 +37,8 @@ fetchData()
 },[])
 
 const handleCartPage =()=>{
-  postRequestForCart(data)
+  postRequestForCart(data);
+  toast.success("Product added to the Cart")
   console.log(data)
 }
 
@@ -62,20 +64,7 @@ console.log(data)
             />
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
-            {/* <Box as={'header'}>
-              <Heading
-                lineHeight={1.1}
-                fontWeight={600}
-                fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                Automatic Watch
-              </Heading>
-              <Text
-                color={useColorModeValue('gray.900', 'gray.400')}
-                fontWeight={300}
-                fontSize={'2xl'}>
-                $350.00 USD
-              </Text>
-            </Box> */}
+            
   
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -96,29 +85,7 @@ console.log(data)
                  {data.description}
                 </Text>
               </VStack>
-              {/* <Box>
-                <Text
-                  fontSize={{ base: '16px', lg: '18px' }}
-                  color={useColorModeValue('yellow.500', 'yellow.300')}
-                  fontWeight={'500'}
-                  textTransform={'uppercase'}
-                  mb={'4'}>
-                  Features
-                </Text>
-  
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                  <List spacing={2}>
-                    <ListItem>Chronograph</ListItem>
-                    <ListItem>Master Chronometer Certified</ListItem>{' '}
-                    <ListItem>Tachymeter</ListItem>
-                  </List>
-                  <List spacing={2}>
-                    <ListItem>Anti‑magnetic</ListItem>
-                    <ListItem>Chronometer</ListItem>
-                    <ListItem>Small seconds</ListItem>
-                  </List>
-                </SimpleGrid>
-              </Box> */}
+             
               <Box>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
@@ -155,7 +122,7 @@ console.log(data)
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                     Price: {data.price}
+                     Price: ₹ {data.price}
                     </Text>{' '}
                   
                   </ListItem>

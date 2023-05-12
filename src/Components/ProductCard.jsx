@@ -31,7 +31,6 @@ export const ProductCard = ({
       price,
       title,
    };
-   
 
    const handleCartPage = () => {
       checkingDataInCart().then((res) => {
@@ -48,26 +47,20 @@ export const ProductCard = ({
    };
    return (
       <DIV className="container">
-         <img  src={image} alt={title} />
+         <img src={image} alt={title} />
          {/* <div className='flex'> */}
          <h3 style={{ fontSize: "15px", fontWeight: 600 }}>{title}</h3>
          {/* </div> */}
-         <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#FF8A65" }}>
-            ₹{price}
-         </h3>
+         <h3 style={{ fontSize: "15px", fontWeight: 600 }}>₹{price}</h3>
          <div class="buttons">
-            <Button
-               size="md"
-               fontSize="s"
-               colorScheme="gray"
-               onClick={handleCartPage}
-            >
-               Add
+            <Button size="md" fontSize="s" onClick={handleCartPage}>
+            Add to
+               Cart
             </Button>
 
             <Link to={`/product/${id}`}>
-               <Button size="md" fontSize="s" colorScheme="gray">
-                  details
+               <Button size="md" fontSize="s">
+                 Details
                </Button>
             </Link>
          </div>

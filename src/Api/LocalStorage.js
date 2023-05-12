@@ -7,3 +7,4 @@ export const setLocalstorageDataCategory = (key,value = "All")=>{
 export const getLocalstorageData = (key)=>{
   return localStorage.getItem(key)
 }
+
