@@ -6,35 +6,32 @@ const intitalState={
     adminAuth:false,
 }
 
-export const AuthReducer=(state=intitalState,{type,payload})=>{
+export const AuthReducer=(state=intitalState,{type})=>{
     
     switch(type){
         case LOGIN_SUCCESS:{
             return {
-               
-                isAuth:payload,
+               ...state,
+                isAuth:true,
             }
         }
         case LOGIN_FAILURE:{
             return {
-                
-                isAuth:payload,
+               ...state,
+               adminAuth:false,
+                isAuth:false,
             }
         }
         case ADMIN_LOGIN_SUCCESS:{
             return {
+               ...state,
                 
-                adminAuth:payload,
+                adminAuth:true,
             }
         }
-        case ADMIN_LOGIN_FAILURE:{
-            return {
-                
-                adminAuth:payload,
-            }
-        }
+      
         default:{
-            return intitalState;
+            return state;
         }
     }
 }

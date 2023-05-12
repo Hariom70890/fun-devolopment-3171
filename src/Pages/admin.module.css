@@ -10,18 +10,22 @@
 }
 
 .Boxes {
-   display: grid;
+   display: flex;
+   /* gap: 10%; */
+   justify-content: space-evenly;
+
+   /* display: grid;
    grid-template-columns: repeat(4, 1fr);
    grid-template-rows: 150px;
-   justify-content: space-evenly;
    /* border: 1px solid green; */
-   padding: 10px;
+   /* padding: 10px;
    gap: 30px;
-   margin-bottom: 40px;
+   margin-bottom: 40px; */ 
 }
 
 .middleContainer {
-   display: flex;
+   /*    display: flex; */
+   
 
    /*border: 1px solid grey; */
    justify-content: space-around;
@@ -32,6 +36,7 @@
    display: flex;
    flex-direction: column;
    padding: 10px;
+   width: 300px;
    align-items: center;
    justify-content: center;
    /* border: 1px solid orange; */
@@ -44,31 +49,24 @@
 
 .buttonContainer {
    /* background-color: aquamarine; */
-   
-   width: 30%;
-   padding: 16px;
+   display: flex;
+  justify-content: space-around;
+  
    padding-top: 30px;
-   border: 0.5px solid rgb(156, 155, 155);
+   /* border: 0.5px solid rgb(156, 155, 155); */
 }
 
 .cardContainer {
    /* background-color: rgb(41, 74, 121); */
-   width: 70%;
-   padding: 30px;
-}
-.cardContainer h1 {
-   color: black;
+   /* width: 70%;
+   padding: 30px; */
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 20px;
+   margin: 30px;
 }
 
-.mainButtonBox {
-   /* border: 1px solid black; */
-   padding: 10px;
-   width: 100%;
-   display: grid;
-   grid-template-columns: repeat(1, 1fr);
-   gap: 20px;
-   margin-bottom: 30px;
-}
+
 
 .getbutton {
    height: 50px;
@@ -100,29 +98,8 @@ button {
    border-radius: 15px;
 }
 
-button:hover {
-   border: 1px solid #1eaedb;
-   background-color: #1eaedb;
-   border-color: #1eaedb;
-}
-#selecttag:focus {
-   border: 1px solid #33c3f0;
-   outline: 0;
-}
-input:focus {
-   border: 1px solid #33c3f0;
-   outline: 0;
-}
-#update-ProductPricebtn,
-#update-Productbtn,
-#add-Producbtn,
-#update-ProducPricebtn,
-#delete-Productbtn,
-#addEmployeeBtn,
-#updateSalary {
-   padding: 10px;
-   margin: 5px 0px 20px 0px;
-}
+
+
 #selecttag {
    display: none;
    padding: 10px;
@@ -133,13 +110,7 @@ input:focus {
    padding: 20px;
 }
 
-/* #updateEmployeeSalary_salary::-webkit-inner-spin-button,
-#updateProductPrice::-webkit-inner-spin-button,
-#addProductPrice::-webkit-inner-spin-button,
-#updateProduct_Price::-webkit-inner-spin-button,
-#addEmployeeSalary::-webkit-inner-spin-button {
-   -webkit-appearance: none;
-} */
+
 .notification {
    text-align: center;
    font-weight: 400;
@@ -165,7 +136,14 @@ input:focus {
 .card > div {
    height: 150px;
 }
-
+.btnsnm{
+   /* position: relative; */
+   /* left: 10%; */
+   padding:15px ;
+   background-color:black;
+   border-radius: 15px;
+   color: white;
+}
 .card > div:first-child {
    width: 150px;
    border: 1px solid rgb(142, 139, 139);
@@ -199,95 +177,5 @@ input:focus {
    margin: 12px;
 }
 
-@media (max-width: 960px) {
-   .Boxes {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 150px);
-   }
-}
-@media (max-width: 600px) {
-   .card p {
-      margin: 10px;
-   }
-}
 
-@media (max-width: 520px) {
-   .Boxes {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(2, 150px);
-   }
-   .buttonContainer {
-      width: 100%;
-      /* border: 2px solid black; */
-   }
-   .buttonContainer > .mainButtonBox,
-   .updateProduct {
-      padding: 10px;
-   }
-   .card > div {
-      height: 100px;
-   }
 
-   .card > div:first-child {
-      width: 130px;
-      border: none;
-      margin-right: 10px;
-   }
-   .card img {
-      width: 100px;
-   }
-   .card p {
-      margin: 5px;
-      font-size: 14px;
-   }
-}
-
-@media (max-width: 1000px) {
-   .buttonContainer {
-      width: 35%;
-   }
-   .cardContainer {
-      width: 65%;
-   }
-   #ProductCardMAIN {
-      width: 100%;
-   }
-}
-
-@media (max-width: 850px) {
-   .middleContainer {
-      flex-direction: column;
-      justify-content: center;
-   }
-   .cardContainer {
-      width: 100%;
-   }
-   .buttonContainer {
-      width: 80%;
-      margin: auto;
-   }
-   .cardContainer {
-      width: 100%;
-      margin-bottom: 10px;
-   }
-   .mainButtonBox,
-   .updateProduct {
-      padding: 40px;
-   }
-}
-@media (max-width: 490px) {
-   .updateProduct {
-      padding: 0px;
-   }
-}
-@media (max-width: 650px) {
-   #ProductCardMAIN {
-      flex-direction: column;
-      margin-bottom: 20px;
-   }
-   #ProductCardMAIN img {
-      display: block;
-      margin-right: 50%;
-      margin-left: 10%;
-   }
-}

@@ -85,10 +85,12 @@ export const Product = () => {
     <DIV className='product-container'>
 
     <div className='total-sort-conatiner'>
-    <Text fontSize='30px' color='black'>
+    <Text fontSize='30px' mt={'auto'}>
   Total Product :{product.length}
 </Text>
-
+<Text pt="5" className='text-cat' fontSize='30px' color='gray'>{
+  (getDataCategoryLS || "").charAt(0).toUpperCase()+(getDataCategoryLS ||"").slice(1)
+}</Text>
     {/* <Text className='text-cat' fontSize='30px' color='gray'>{getDataCategoryLS.charAt(0).toUpperCase() + getDataCategoryLS.slice(1)}</Text> */}
 <select id="sort" value={order} onChange={handleSortChange}>
     <option value="undefined">--Select a Option--</option>

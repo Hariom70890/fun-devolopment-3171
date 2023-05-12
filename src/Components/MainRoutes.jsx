@@ -17,6 +17,8 @@ import SingleProductPage from "../Pages/SingleProductPage";
 import Payment from "../Pages/Payment";
 import { AdminCard } from "./AdminCard";
 import { AdminEditPage } from "../Pages/AdminEditPage";
+import AddEmployee from "../Pages/AddEmployee";
+import PrivateRouting from "./PrivateRouting";
 
 export const MainRoutes = () => {
    return (
@@ -29,26 +31,35 @@ export const MainRoutes = () => {
          <Route path="/signup" element={<SignupCard />} />
          <Route path="/contact" element={<Contact />} />
          <Route path="/payment" element={<Payment />} />
-         <Route path="/admin" element={<Admin />} />
-
+         <Route path="/admindashboard/addProduct" element={<Admin />} />
+         <Route path="/admindashboard/addemployee" element={<AddEmployee />} />
          <Route path="/cart" element={<CartPage />} />
 
-         <Route path="/shop" element={<Product />} />
+         <Route path="/shop" element={
+         <PrivateRouting>
+
+         <Product /> 
+         </PrivateRouting>
+         }
+         />
 
          <Route
             path="/product/:id"
             element={
-               // <PrivateRouting>
+               <PrivateRouting>
                <SingleProductPage />
-               // </PrivateRouting>
+                </PrivateRouting>
             }
          />
 
          <Route path="edit/:id" element={<AdminEditPage />} />
 
-         <Route path="/admindashboard" element={<AdminDashboard />} />
+         <Route path="/admindashboard" element={
+         <PrivateRouting>
 
-         <Route path="/cart" element={<CartPage />} />
+         <AdminDashboard />
+         </PrivateRouting>
+         } />
       </Routes>
    );
 };

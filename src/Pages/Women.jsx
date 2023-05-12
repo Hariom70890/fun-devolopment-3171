@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { getProduct } from "../Api/action";
 import { Spinner } from "@chakra-ui/react";
+import  {userlogin}  from "../login/Login";
 
 export const Women = ( ) =>{
     const [femaleData,setFemale] = useState([]);
@@ -22,6 +23,8 @@ export const Women = ( ) =>{
     useEffect(()=>{
         getMenFunction()
     },[])
+
+  console.log(userlogin)
     return(
       <div>{isLoading ? (<Spinner style={{marginLeft: "50%" , marginTop: "40vh" ,marginBottom:"100px"}}
       thickness='4px'
