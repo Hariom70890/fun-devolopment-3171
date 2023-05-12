@@ -41,6 +41,16 @@ export const Navbar = () =>{
 		);
 	};
 
+	const searchBar = useRef(null)
+
+
+	const showSearch = ()=>{
+		searchBar.current.classList.toggle(
+			"navSearch"
+		);
+		console.log('check');
+	}
+
 	return (
 
 	
@@ -51,7 +61,7 @@ export const Navbar = () =>{
 
 
 			<div className="secNav">
-			<nav ref={navRef}>
+			<nav  ref={navRef}>
 				<Link  to="/about" >ABOUT</Link>
                 <div className="blackDot"></div>
 				<Link  to="/men" className="about section" >MEN</Link>
@@ -67,10 +77,11 @@ export const Navbar = () =>{
 					<Icon as={FaTimes} />
 				</button>
 				{/* -------------------------------------------------------I added search here------------------------- */}
-				<input type="text" placeholder="Search" onChange={(e)=>setSearchText(e.target.value)}/>
+				
 			</nav>
             <div className="navIcons">
-                    <SearchIcon/>
+				<input className="beforeSearch" ref={searchBar} type="text" placeholder="Search"  onChange={(e)=>setSearchText(e.target.value)}/>
+                    <SearchIcon onClick={showSearch}/>
 					<Link to="/cart">
 					<Icon as={BsHandbag}/>
 					</Link>

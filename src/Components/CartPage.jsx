@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 import {
   Input,
     Button,
@@ -16,8 +17,14 @@ import {
 import axios from "axios"
 
 
-const CartPage = () => {
 
+
+
+
+
+
+const CartPage = () => {
+  
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [scrollBehavior, setScrollBehavior] = React.useState('inside')
 
@@ -35,6 +42,9 @@ const CartPage = () => {
   const[landmark, setlandmark] = useState("")
   const[gstin, setgstin] = useState("")
 
+
+  const nav=useNavigate()
+
   const HandleSubmit =(e)=>{
     e.preventDefault()
     if(name!=="" && mobile!=="" && email!=="" 
@@ -44,6 +54,7 @@ const CartPage = () => {
     ){
       setaddress({name, mobile, email, pin, city, state, country, building, area, landmark, gstin})
       alert("Added all the details")
+     nav("/payment")
 
      
     }
@@ -53,12 +64,15 @@ const CartPage = () => {
 }
 
 
+
+
+
 const btnRef = React.useRef(null)
 
 
   const [Data, setData] = useState([])
 
-  console.log("Data", Data)
+  // console.log("Data", Data)
 
 
   const handleadd = () => {
@@ -69,7 +83,14 @@ const btnRef = React.useRef(null)
       setData(updateddata)
     })
   }
-  //  console.log("data",Data)
+
+
+  
+
+
+
+
+    // console.log("data",Data)
 
   const handledelete = (id) => {
     axios.delete(`https://json-example.onrender.com/cart/${id}`).then(() => (
@@ -80,29 +101,31 @@ const btnRef = React.useRef(null)
 
 
 
+
+
 const handlequantity = (id, val) => {
     //console.log("op",id,val)
     let filteredData = Data.filter((el) => el.id === id ? el.quantity += val : el)
     //  console.log(filteredData)
     setData(filteredData)
+    console.log("hari")
   }
 
 
 
-  // const [quantity,setQuantity]=useState(Data.quantity)
-  // console.log("i",quantity)
+
 
   const [price, setPrice] = useState(0)
-  console.log("price", price)
+  
+  // console.log("price", price)
 
   const total = () => {
     let price = 0;
     Data.map((item) => (price += item.price * item.quantity)
-
     )
     setPrice(price)
+  
   }
-
 
   useEffect(() => {
     total()
@@ -114,16 +137,39 @@ const handlequantity = (id, val) => {
 
   useEffect(() => {
     handleadd()
+    catchid()
   }, [])
 
- 
 
 
-const onBuy=()=>{
-  alert("Order Placed")
-  onClose()
- 
+
+   
+   const [idd,setidd]=useState([])
+   const catchid = () => {
+    axios.get(`https://json-example.onrender.com/cart`).then((res) => {
+      //console.log("res",res.data)
+      let iddata = res.data.map((el) => (el.id))
+      //  console.log("ooo",updateddata)
+      setidd(iddata)
+    })
+  }
+  
+  console.log("idd",idd)
+
+
+  const handledeleteAll = () => {
+    for(let i=0;i<idd.length;i++){
+      axios.delete(`https://json-example.onrender.com/cart/${idd[i]}`).then(() => {
+        handleadd()
+    })
+    }
 }
+
+
+
+
+ 
+
 
  
 
@@ -153,9 +199,9 @@ const onBuy=()=>{
                         className="col-lg-3 col-md-12 mb-4 mb-lg-0"
                       >
 
-                        <div
-                          className="bg-image hover-overlay hover-zoom ripple rounded"
+                        <div className="bg-image hover-overlay hover-zoom ripple rounded"
                           data-mdb-ripple-color="light"
+                          
                         >
                           <img src={item.image}
                             className="w-100"
@@ -216,13 +262,14 @@ const onBuy=()=>{
                             onClick={() => handlequantity(item.id, 1)}
 
 
+
                           >
                             <i className="fas fa-plus"></i>
                           </button>
                         </div>
 
                         <p className="text-start text-md-center">
-                          <strong>price:Rs {item.price}</strong>
+                          <strong>price: ₹ {item.price}</strong>
                         </p>
                         <p className="text-start text-md-center">
                           <strong></strong>
@@ -267,7 +314,7 @@ const onBuy=()=>{
                 <div className="card-body"
                   style={{ display: "flex", flex: "column", gap: "5px" }}
                 >
-
+     
                   <img className="me-2" width="45px"
                     src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                     alt="Visa" />
@@ -300,7 +347,7 @@ const onBuy=()=>{
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Shipping
-                      <span>Gratis</span>
+                      <span>None</span>
                     </li>
                     <li
                       className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
@@ -310,7 +357,7 @@ const onBuy=()=>{
                           <p className="mb-0">(including VAT)</p>
                         </strong>
                       </div>
-                      <span><strong>{price}</strong></span>
+                      <span><strong> ₹ {price}</strong></span>
                     </li>
                   </ul>
 
@@ -321,27 +368,20 @@ const onBuy=()=>{
                   </button>
                 </div>
               </div>
+              <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                          title="Remove All"
+                      onClick={handledeleteAll}
+                  
+                    
+
+                        >
+                          <i className="fas fa-trash"></i>
+                        </button>
             </div>
-
-
-
-
-
-
-
-
-
-
           </div>
       
-        </div>
-
-
-
-
-   
+        </div> 
       </section>
-
 
       <Modal
           onClose={onClose}
@@ -374,9 +414,14 @@ const onBuy=()=>{
 
     <Center>
     <ModalFooter>
+     
         <Button type="submit" >ADD ADDRESS</Button>
+        
        
-            <Button onClick={onBuy}>Buy</Button>
+       
+
+   
+            
         
     </ModalFooter>
     </Center>
