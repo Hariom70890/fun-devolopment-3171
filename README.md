@@ -16,5 +16,7 @@
 
 ## Shop Page
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/e0b0ba42-6e89-49b4-a49e-5a25f77eb1ce)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/f0840374-8442-45f3-8b52-ebfa93675b4d)
+
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/5e66e4a5-d0ee-402c-a15a-a0e1a42680ad)
 
