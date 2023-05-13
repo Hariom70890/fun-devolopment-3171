@@ -1,3 +1,4 @@
+### Quick Buy
 ## Website Logo
 ![logo_final](https://user-images.githubusercontent.com/112471219/236364309-5c7783e5-cca2-4152-9ff6-6eafb2c3474a.png)
 
@@ -18,5 +19,23 @@
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/06ed4851-d3f6-4b6b-a7a4-5c54b323a7c6)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/3e882978-8fe4-46ac-b90e-1e0157ca446e)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/d36c3a18-8582-41e1-b6cb-f53d7707a0d7)
+
+## Dark Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/98dd30a5-972e-4fd1-911f-6e35c5f6633a)
+
+## Login Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/55a77f84-5542-4bc2-9742-02709d451051)
+
+## Sign-Up Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/a09741a5-29c7-4b4a-98ea-140d456cdc4f)
+
+## Cart Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/3b86976b-aeab-496f-95fc-e3f996e6ac15)
+
+## Address Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/4791b618-4aa5-43ef-8e4b-716f309f5c7d)
+
+## Payment Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/95490803-2884-4153-89bd-fdb792ebfc3d)
 
 
