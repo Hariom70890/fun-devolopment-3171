@@ -40,5 +40,14 @@
 
 ## Admin Page
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/21c46805-5311-4f96-9b16-5c3cefed35e7)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/eae47bf8-6789-47fe-811f-f118db1b434d)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/87683b57-dcde-4387-af12-ea3b3804a5d6)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/1f5bcf5a-9005-4606-b5b9-85b4a3c69e8c)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/f2105097-b314-45ee-82fc-36eef5b6f470)
+# Admin Edit Product Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/57f935ab-533c-4f54-991c-ab4d81de07de)
+# Admin Add Product Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/8d2e5138-964a-4c1c-8aea-88636600b680)
+# Admin Add Employee Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/cefb0557-a42f-4bcd-8a7b-455561080232)
+
 
