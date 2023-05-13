@@ -17,12 +17,12 @@ import { BiLogOut } from "react-icons/bi";
 
 // import styled from "styled-components";
 export const Navbar = () => {
-	{
-		/* -------------------------------------------------------I added search here------------------------- */
-	}
-   const isAuth = localStorage.getItem('isAuth')   
+   {
+      /* -------------------------------------------------------I added search here------------------------- */
+   }
+   const isAuth = localStorage.getItem("isAuth");
    // console.log(isAuth)
-	const { colorMode, toggleColorMode } = useColorMode();
+   const { colorMode, toggleColorMode } = useColorMode();
    const dispatch = useDispatch();
    const [searchParams, setSearchParams] = useSearchParams();
    const initialParams = searchParams.getAll("category" || "color" || "gender");
@@ -54,11 +54,11 @@ export const Navbar = () => {
       console.log("check");
    };
 
-//  for login button logout button..................
- const [isAuthh, setIsAuthh] = useState(isAuth)
-useEffect(()=>{
-setIsAuthh(isAuthh)
-},[isAuth])
+   //  for login button logout button..................
+   const [isAuthh, setIsAuthh] = useState(isAuth);
+   useEffect(() => {
+      setIsAuthh(isAuthh);
+   }, [isAuth]);
 
    return (
       <header>
@@ -93,34 +93,25 @@ setIsAuthh(isAuthh)
                   onChange={(e) => setSearchText(e.target.value)}
                />
                <SearchIcon onClick={showSearch} />
-			   <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
+               <Button onClick={toggleColorMode}>
+                  {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+               </Button>
                <Link to="/cart">
                   <Icon as={BsHandbag} />
                </Link>
 
                <Link to="/login">
-               {
-                  isAuthh ? 
-                 
-                 (
-
+                  {isAuthh ? (
                      <Button
-                     onClick={()=>{
-                        localStorage.setItem("isAuth",false)
-                     }}
+                        onClick={() => {
+                           localStorage.setItem("isAuth", false);
+                        }}
                      >
-
-                  <BiLogOut/>
-                     </Button> 
-                 )
-                     :
-                     (
-
-                     <Icon as={IoPersonOutline} /> 
-                     )
-               }
+                        <BiLogOut />
+                     </Button>
+                  ) : (
+                     <Icon as={IoPersonOutline} />
+                  )}
                </Link>
             </div>
             <button className="nav-btn" onClick={showNavbar}>

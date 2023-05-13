@@ -19,12 +19,11 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AdminSuccess, LoginSuccess } from "../Redux/Login/action";
-export const userlogin =false;
+export const userlogin = false;
 
 export default function Login() {
-
-const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
-console.log("auth value " ,isAuth)
+   const isAuth = useSelector((store) => store.AuthReducer.isAuth);
+   console.log("auth value ", isAuth);
 
    const [user, setUser] = useState([]);
    const [email, setEmail] = useState("");
@@ -36,14 +35,14 @@ console.log("auth value " ,isAuth)
          .then((res) => setUser(res.data));
    }, []);
 
-   const dispatch = useDispatch()
+   const dispatch = useDispatch();
    const [userlogin, setUserlogin] = useState(false);
    const [adminLogin, setAdminLogin] = useState(false);
    const navigate = useNavigate();
-   const location = useLocation()
+   const location = useLocation();
 
    const [x, setx] = useState(true);
-   console.log(userlogin)
+   console.log(userlogin);
    const handleLogin = () => {
       user.map((e) => {
          if (
@@ -52,9 +51,9 @@ console.log("auth value " ,isAuth)
             email === "admin" &&
             password === "admin"
          ) {
-           dispatch(AdminSuccess())
-            alert("Admin is logined Success")
-            navigate('/admindashboard')
+            dispatch(AdminSuccess());
+            alert("Admin is logined Success");
+            navigate("/admindashboard");
             // setAdminLogin(true);
          } else if (
             e.email == email &&
@@ -64,36 +63,22 @@ console.log("auth value " ,isAuth)
          ) {
             // alert("User is logined Success")
             // setUserlogin(true);
-            dispatch(LoginSuccess())
+            dispatch(LoginSuccess());
             toast.success("✔ successfully login");
-          alert("✔ successfully login")
+            alert("✔ successfully login");
+console.log(location.state.from)
+const pa = location.state.from
+            navigate(`${pa}`);
+         }
+      });
 
-            // navigate(location.state)
-            navigate('/shop')
+      
+   };
 
-          }
-        });
-        
-        // setx(!x);
-      };
-  //     useEffect(() => {
-  //       if (userlogin) {
-  //         toast.success("✔ successfully login");
-  //         alert("✔ successfully login")
-  //         localStorage.setItem('isAuth',userlogin)
-  //        navigate("/");
-  //     } else if (adminLogin) {
-  //        alert("✔ Admin is successfully login");
-
-  //        navigate("/admindashboard");
-  //     } else {
-  //        toast.error("plz check your email or password");
-  //     }
-  //  }, [x]);
 
    return (
       <Flex
-           padding={"50px 10px"}
+         padding={"50px 10px"}
          background={"#42a5f5"}
          minH={"100vh"}
          align={"center"}
@@ -103,7 +88,6 @@ console.log("auth value " ,isAuth)
          box-shadow={
             "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset"
          }
-        
       >
          <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
             <Stack align={"center"}>
@@ -130,7 +114,7 @@ console.log("auth value " ,isAuth)
                   <FormControl id="email">
                      <FormLabel>Email address</FormLabel>
                      <Input
-                      required
+                        required
                         type="email"
                         value={email}
                         placeholder="Enter Your Email"

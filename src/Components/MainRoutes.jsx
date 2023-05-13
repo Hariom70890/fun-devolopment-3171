@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 
 import { Home } from "../Pages/Home";
 import { About } from "../Pages/About";
-import { Contact } from "../Pages/Contact";
 import { Men } from "../Pages/Men";
 import { Women } from "../Pages/Women";
 import { Product } from "../Pages/Product";
@@ -19,6 +18,7 @@ import { AdminCard } from "./AdminCard";
 import { AdminEditPage } from "../Pages/AdminEditPage";
 import AddEmployee from "../Pages/AddEmployee";
 import PrivateRouting from "./PrivateRouting";
+import Paymentdone from "./PaymentDone";
 
 export const MainRoutes = () => {
    return (
@@ -29,37 +29,39 @@ export const MainRoutes = () => {
          <Route path="/women" element={<Women />} />
          <Route path="/login" element={<Login />} />
          <Route path="/signup" element={<SignupCard />} />
-         <Route path="/contact" element={<Contact />} />
-         <Route path="/payment" element={<Payment />} />
+         <Route
+            path="/payment"
+            element={
+               <PrivateRouting>
+                  <Payment />
+               </PrivateRouting>
+            }
+         />
          <Route path="/admindashboard/addProduct" element={<Admin />} />
          <Route path="/admindashboard/addemployee" element={<AddEmployee />} />
          <Route path="/cart" element={<CartPage />} />
-
-         <Route path="/shop" element={
-         <PrivateRouting>
-
-         <Product /> 
-         </PrivateRouting>
-         }
-         />
+         <Route path="/paymentdone" element={<Paymentdone />} />
+         <Route path="/shop" element={<Product />} />
 
          <Route
             path="/product/:id"
             element={
-               <PrivateRouting>
-               <SingleProductPage />
-                </PrivateRouting>
+           
+                  <SingleProductPage />
+              
             }
          />
 
          <Route path="edit/:id" element={<AdminEditPage />} />
 
-         <Route path="/admindashboard" element={
-         <PrivateRouting>
-
-         <AdminDashboard />
-         </PrivateRouting>
-         } />
+         <Route
+            path="/admindashboard"
+            element={
+               <PrivateRouting>
+                  <AdminDashboard />
+               </PrivateRouting>
+            }
+         />
       </Routes>
    );
 };

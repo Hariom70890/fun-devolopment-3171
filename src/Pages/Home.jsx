@@ -1,6 +1,6 @@
 import textBanner from "../images/textBanner.png";
 import Tshirt from "../images/Tshirt.png";
-import jacket from "../images/jacket.jpg"
+import jacket from "../images/jacket.jpg";
 import styled from "styled-components";
 import { StarIcon } from "@chakra-ui/icons";
 import { HomeProduct } from "../Components/HomeProducts";
@@ -68,7 +68,7 @@ export const Home = () => {
                         </div>
                         <h3>SUSTAINBILITY</h3>
                      </div>
-                     <p style={{ cursor: 'url("../images/Curser.png")' }} >
+                     <p style={{ cursor: 'url("../images/Curser.png")' }}>
                         We're challenging contional retail, putting an end to
                         dead stock, unconventional waste and more funtastic.
                      </p>
@@ -122,14 +122,14 @@ const DIV = styled.div`
       /* cursor: url("../images/buyicon.svg"), auto; */
       cursor: pointer;
    }
-   .nextImages{
+   .nextImages {
       /* height: 90%; */
       display: grid;
-      grid-template-columns: repeat(1,1fr);
+      grid-template-columns: repeat(1, 1fr);
    }
    .nextImages > img {
       width: 100%;
-      
+
       border-radius: 10px;
    }
    .capsImage {

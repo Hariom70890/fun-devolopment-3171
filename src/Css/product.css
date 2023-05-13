@@ -1,70 +1,65 @@
-.side-bar{
-    display: flex;
+.side-bar {
+   display: flex;
 }
-.total-sort-conatiner{
-    /* border: 1px solid red; */
-    margin-left: 10px;
-    margin-right: 2px;
-    display: flex;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    margin-bottom: 20px;
-    margin-top: 6%;
-    justify-content: space-between;
-
-}
-
-.product-container{
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5%;
-    margin-bottom: 8%;
-  }
- .text-male{
-    position: absolute;
-    margin-left: 41%;
- }
- .product-card{
-    display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 1rem;
+.total-sort-conatiner {
+   /* border: 1px solid red; */
+   margin-left: 10px;
+   margin-right: 2px;
+   display: flex;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   margin-bottom: 20px;
+   margin-top: 6%;
+   justify-content: space-between;
 }
 
- /* Medium screens */
+.product-container {
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top: 5%;
+   margin-bottom: 8%;
+}
+.text-male {
+   position: absolute;
+   margin-left: 41%;
+}
+.product-card {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 1rem;
+}
+
+/* Medium screens */
 @media all and (min-width: 451px) and (max-width: 750px) {
-    .product-card{
-        /* border: 2px solid red; */
-        display: grid;
-      grid-template-columns: repeat(2,1fr);
-    }
-    .pagination{
+   .product-card {
+      /* border: 2px solid red; */
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+   }
+   .pagination {
       display: none;
-    }
-   
-  }
-  /* Small screens */
-  @media all and (min-width: 100px) and (max-width: 450px) {
-  
-    .product-card{
+   }
+}
+/* Small screens */
+@media all and (min-width: 100px) and (max-width: 450px) {
+   .product-card {
       margin-top: 100px;
-        /* border: 2px solid red; */
-        display: grid;
-      grid-template-columns: repeat(1,1fr);
-    }
-    .total-sort-conatiner{
+      /* border: 2px solid red; */
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+   }
+   .total-sort-conatiner {
       display: none;
-    }
-    .pagination{
+   }
+   .pagination {
       display: none;
-    }
-  }
-  
-  /* .spinner{
+   }
+}
+
+/* .spinner{
     margin-left: 70vh;
    margin-top: 20vh;
   } */
-  
-  
-  
+
 /* .product-card{
     border: 2px solid red;
 } */

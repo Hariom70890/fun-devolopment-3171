@@ -15,7 +15,7 @@ const initialState = {
 function Admin() {
    const [product, setProduct] = useState(initialState);
    const { name, image, desc, price, category, gender, color } = product;
-const navigate = useNavigate()
+   const navigate = useNavigate();
    const handleChange = (e) => {
       const { name, value } = e.target;
       setProduct((prev) => {
@@ -27,12 +27,12 @@ const navigate = useNavigate()
       e.preventDefault();
 
       axios
-          .post(`https://json-example.onrender.com/products`, product)
+         .post(`https://json-example.onrender.com/products`, product)
          // .post(`http://localhost:8080/product`)
          .then((res) => console.log(res.data));
       console.log(product);
       alert("Item has been added");
-      navigate('/app')
+      navigate("/app");
    };
    return (
       <DIV>

@@ -84,7 +84,6 @@ export default function SignupCard() {
          box-shadow={
             "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset"
          }
-        
       >
          <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
             <Stack align={"center"}>
@@ -92,9 +91,7 @@ export default function SignupCard() {
                <Heading fontSize={"4xl"} textAlign={"center"}>
                   Sign up
                </Heading>
-               <Text fontSize={"lg"} >
-                  to enjoy all of our cool features ✌️
-               </Text>
+               <Text fontSize={"lg"}>to enjoy all of our cool features ✌️</Text>
             </Stack>
             <Box
                rounded={"lg"}

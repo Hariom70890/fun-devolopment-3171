@@ -19,29 +19,34 @@ const initialState = {
 function AddEmployee() {
    const [employee, setEmployee] = useState(initialState);
    const { fullName, image, address, age, salary, gender, role } = employee;
-const navigate = useNavigate()
+   const navigate = useNavigate();
    const handleChange = (e) => {
       const { name, value } = e.target;
       setEmployee((prev) => {
-         return { ...prev, [name]: name === "age" || "salary" ? +value : value };
+         return {
+            ...prev,
+            [name]: name === "age" || "salary" ? +value : value,
+         };
       });
-      console.log(employee)
+      console.log(employee);
    };
 
    const handleSubmit = (e) => {
       e.preventDefault();
 
       axios
-          .post(`https://json-example.onrender.com/employees`, employee)
+         .post(`https://json-example.onrender.com/employees`, employee)
          .then((res) => console.log(res.data));
       console.log(employee);
       toast("New Employee has been added");
-      navigate('/admindashboard')
+      navigate("/admindashboard");
    };
    return (
       <DIV>
          <form onSubmit={handleSubmit}>
-            <h1 style={{ fontFamily: "Brush Script MT", textAlign:"center" }}>Add a New Employee to Your Company</h1>
+            <h1 style={{ fontFamily: "Brush Script MT", textAlign: "center" }}>
+               Add a New Employee to Your Company
+            </h1>
 
             <input
                required
@@ -55,7 +60,7 @@ const navigate = useNavigate()
             <input
                required
                value={image}
-            type="text"
+               type="text"
                onChange={(e) => handleChange(e)}
                name="image"
                placeholder="Employee Image"
@@ -78,14 +83,14 @@ const navigate = useNavigate()
                value={age}
                placeholder="Employee age"
             />
-<input  
+            <input
                required
                value={salary}
                onChange={(e) => handleChange(e)}
                name="salary"
                type="number"
-placeholder="Employee Salary (LPA)"
-/>
+               placeholder="Employee Salary (LPA)"
+            />
             <select
                required
                value={role}
@@ -95,13 +100,14 @@ placeholder="Employee Salary (LPA)"
             >
                <option value="">Select Employee role</option>
 
-              <option value="Full-stack Developer">Full-stack Developer</option>
-              <option value="Front-End Developer">Front-End Developer</option>
-              <option value="Back-End Developer">Back-End Developer</option>
+               <option value="Full-stack Developer">
+                  Full-stack Developer
+               </option>
+               <option value="Front-End Developer">Front-End Developer</option>
+               <option value="Back-End Developer">Back-End Developer</option>
             </select>
 
             <select
-               
                required
                onChange={(e) => handleChange(e)}
                name="gender"

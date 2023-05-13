@@ -54,13 +54,12 @@ export const ProductCard = ({
          <h3 style={{ fontSize: "15px", fontWeight: 600 }}>₹{price}</h3>
          <div class="buttons">
             <Button size="md" fontSize="s" onClick={handleCartPage}>
-            Add to
-               Cart
+               Add to Cart
             </Button>
 
             <Link to={`/product/${id}`}>
                <Button size="md" fontSize="s">
-                 Details
+                  Details
                </Button>
             </Link>
          </div>
