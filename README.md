@@ -15,8 +15,8 @@
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/bd43d63c-c058-4d10-b772-f4ebae2d16bc)
 
 ## Shop Page
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/e0b0ba42-6e89-49b4-a49e-5a25f77eb1ce)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/f0840374-8442-45f3-8b52-ebfa93675b4d)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/06ed4851-d3f6-4b6b-a7a4-5c54b323a7c6)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/3e882978-8fe4-46ac-b90e-1e0157ca446e)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/d36c3a18-8582-41e1-b6cb-f53d7707a0d7)
 
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/5e66e4a5-d0ee-402c-a15a-a0e1a42680ad)
 
