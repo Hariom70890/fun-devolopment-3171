@@ -38,4 +38,7 @@
 ## Payment Page
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/95490803-2884-4153-89bd-fdb792ebfc3d)
 
+## Admin Page
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/21c46805-5311-4f96-9b16-5c3cefed35e7)
+![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/eae47bf8-6789-47fe-811f-f118db1b434d)
 
