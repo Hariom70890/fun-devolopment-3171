@@ -23,7 +23,7 @@ Made by Murad Kodalwad
 
 ## Men Page
 Made by Prashant Som
-![image](https://freeimage.host/i/chrome-r5q8uzjtlo.HUOxnXS)
+![image](https://iili.io/HUOxnXS.png)
 
 ## Women Page
 Made by Prashant Som
@@ -52,11 +52,11 @@ Made by Bipin Bhat
 
 ## Address Page
 Made by Bipin Bhat
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/4791b618-4aa5-43ef-8e4b-716f309f5c7d)
+![image](https://freeimage.host/i/chrome-uvmknplx96.HUOxCI2)
 
 ## Payment Page
 Made by Bipin Bhat
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/95490803-2884-4153-89bd-fdb792ebfc3d)
+![image](https://freeimage.host/i/chrome-treesz43e2.HUOxK7f)
 
 ## Admin Page
 Made By Hariom Verma
