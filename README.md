@@ -17,22 +17,22 @@ Sajjak Ali (team member ) has build the login and sign up pages for a new user t
 Made by Murad Kodalwad
 ![image](https://iili.io/HUOK5og.png)
 ![image](https://iili.io/HUOKxSV.png)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/fc554157-aa07-47b0-a9c5-e2e163ca4e86)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/e16806ff-ecec-4f0a-9a15-de7927b16d42)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/bddf53d8-0363-449b-ae4d-f5d954a01e1e)
+![image](https://iili.io/HUOx2gs.png)
+![image](https://iili.io/HUOxFdG.png)
+
 
 ## Men Page
 Made by Prashant Som
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/be2d3dca-9954-4e72-b08c-1643f5aa8fd8)
+![image](https://freeimage.host/i/chrome-r5q8uzjtlo.HUOxnXS)
 
 ## Women Page
 Made by Prashant Som
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/bd43d63c-c058-4d10-b772-f4ebae2d16bc)
+![image](https://iili.io/HUOxd1n.png)
 
 ## Shop Page
 Made by Prashant Som
 ![image](https://iili.io/HUOKADF.png)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/3e882978-8fe4-46ac-b90e-1e0157ca446e)
+![image](https://iili.io/HUOoyXI.png)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/d36c3a18-8582-41e1-b6cb-f53d7707a0d7)
 
 ## Dark Page
