@@ -15,8 +15,8 @@ Sajjak Ali (team member ) has build the login and sign up pages for a new user t
 
 ## Landing Page 
 Made by Murad Kodalwad
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/136cc9a3-7512-419e-9d41-796ba4c4f468)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/fa449110-06dd-42bd-ace7-85042e7840b7)
+![image](https://iili.io/HUOK5og.png)
+![image](https://iili.io/HUOKxSV.png)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/fc554157-aa07-47b0-a9c5-e2e163ca4e86)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/e16806ff-ecec-4f0a-9a15-de7927b16d42)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/bddf53d8-0363-449b-ae4d-f5d954a01e1e)
@@ -31,7 +31,7 @@ Made by Prashant Som
 
 ## Shop Page
 Made by Prashant Som
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/06ed4851-d3f6-4b6b-a7a4-5c54b323a7c6)
+![image](https://iili.io/HUOKADF.png)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/3e882978-8fe4-46ac-b90e-1e0157ca446e)
 ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/d36c3a18-8582-41e1-b6cb-f53d7707a0d7)
 
@@ -40,7 +40,7 @@ Made by Prashant Som
 
 ## Login Page
 Made by Sajjak Ali
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/55a77f84-5542-4bc2-9742-02709d451051)
+![image](https://freeimage.host/i/chrome-vlpsdacu0l.HUOKIHB)
 
 ## Sign-Up Page
 Made by Sajjak Ali
@@ -48,7 +48,7 @@ Made by Sajjak Ali
 
 ## Cart Page
 Made by Bipin Bhat
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/3b86976b-aeab-496f-95fc-e3f996e6ac15)
+![image](https://iili.io/HUOKocQ.png)
 
 ## Address Page
 Made by Bipin Bhat
