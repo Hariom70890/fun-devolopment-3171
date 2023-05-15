@@ -33,18 +33,18 @@ Made by Prashant Som
 Made by Prashant Som
 ![image](https://iili.io/HUOKADF.png)
 ![image](https://iili.io/HUOoyXI.png)
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/d36c3a18-8582-41e1-b6cb-f53d7707a0d7)
+<!-- ![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/d36c3a18-8582-41e1-b6cb-f53d7707a0d7) -->
 
 ## Dark Page
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/98dd30a5-972e-4fd1-911f-6e35c5f6633a)
+![image](https://iili.io/HUORga9.png)
 
 ## Login Page
 Made by Sajjak Ali
-![image](https://freeimage.host/i/chrome-vlpsdacu0l.HUOKIHB)
+![image](https://iili.io/HUOKIHB.png)
 
 ## Sign-Up Page
 Made by Sajjak Ali
-![image](https://github.com/Hariom70890/fun-devolopment-3171/assets/112471219/a09741a5-29c7-4b4a-98ea-140d456cdc4f)
+![image](https://iili.io/HUORU37.png)
 
 ## Cart Page
 Made by Bipin Bhat
@@ -52,11 +52,11 @@ Made by Bipin Bhat
 
 ## Address Page
 Made by Bipin Bhat
-![image](https://freeimage.host/i/chrome-uvmknplx96.HUOxCI2)
+![image](https://iili.io/HUOxCI2.png)
 
 ## Payment Page
 Made by Bipin Bhat
-![image](https://freeimage.host/i/chrome-treesz43e2.HUOxK7f)
+![image](https://iili.io/HUOxK7f.png)
 
 ## Admin Page
 Made By Hariom Verma
