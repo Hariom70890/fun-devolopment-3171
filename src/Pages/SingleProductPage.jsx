@@ -29,7 +29,7 @@ import { toast } from 'react-toastify';
     const [data,setData]=useState({})
 let idNo=useParams()
 console.log(idNo.id)
-const fetchData=()=>axios.get(`https://v6dej6.sse.codesandbox.io/products/${idNo.id}`)
+const fetchData=()=>axios.get(`https://json-example.onrender.com/products/${idNo.id}`)
 .then((res)=>{setData( res.data)})
 
 useEffect(()=>{
